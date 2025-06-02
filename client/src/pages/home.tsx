@@ -92,13 +92,13 @@ export default function Home() {
         {/* Welcome Section */}
         <section className="retro-container p-8 mb-8 text-center">
           <div className="mb-6">
-            <div className="inline-block bg-gradient-to-r from-yellow-400 via-pink-500 to-cyan-400 text-black font-comic text-2xl px-6 py-3 rounded-full animate-blink font-bold">
-              ★ WELCOME TO MY CYBERSPACE ★
+            <div className="inline-block bg-yellow-300 text-black font-comic text-2xl px-6 py-3 border-2 border-black animate-blink font-bold">
+              ★ WELCOME TO MY HOMEPAGE ★
             </div>
           </div>
           
-          <h1 className="font-comic text-4xl md:text-6xl lg:text-8xl mb-6 bg-gradient-to-r from-cyan-400 to-pink-500 bg-clip-text text-transparent animate-pulse">
-            PETER'S SPACE
+          <h1 className="font-comic text-4xl md:text-6xl lg:text-8xl mb-6 text-blue-800">
+            PETER'S HOMEPAGE
           </h1>
           
           <div className="flex flex-col md:flex-row items-center gap-8">
@@ -112,15 +112,15 @@ export default function Home() {
             </div>
             
             <div className="text-left max-w-2xl">
-              <p className="font-verdana text-lg mb-4 leading-relaxed">
-                Hey! I'm Peter, and welcome to my little corner of the internet! 🌟 
-                This site is like my digital diary mixed with a time machine back to the golden age of the web. 
-                I'm passionate about technology, creativity, and making the internet a more fun place!
+              <p className="font-verdana text-lg mb-4 leading-relaxed text-black">
+                Hey! I'm Peter, and welcome to my homepage! 
+                This site is like my digital diary from the golden age of the web. 
+                I'm passionate about technology, creativity, and making cool websites!
               </p>
               <div className="flex gap-4 justify-center md:justify-start flex-wrap">
-                <span className="bg-yellow-400 text-black px-3 py-1 rounded-full font-comic">Web Enthusiast</span>
-                <span className="bg-pink-500 text-white px-3 py-1 rounded-full font-comic">Creator</span>
-                <span className="bg-cyan-400 text-black px-3 py-1 rounded-full font-comic">Dreamer</span>
+                <span className="bg-red-500 text-white px-3 py-1 border-2 border-black font-comic">Web Designer</span>
+                <span className="bg-blue-500 text-white px-3 py-1 border-2 border-black font-comic">Creator</span>
+                <span className="bg-green-500 text-white px-3 py-1 border-2 border-black font-comic">Dreamer</span>
               </div>
             </div>
           </div>
@@ -128,18 +128,18 @@ export default function Home() {
         
         {/* What I'm Up To Section */}
         <section className="retro-container p-8 mb-8">
-          <h2 className="font-comic text-4xl text-yellow-400 mb-6 text-center neon-text">
-            🚀 What I'm Up To Right Now 🚀
+          <h2 className="font-comic text-4xl text-purple-800 mb-6 text-center">
+            What I'm Up To Right Now
           </h2>
           
           <div className="grid md:grid-cols-2 gap-6">
             {projects.map((project, index) => (
-              <div key={index} className={`bg-gradient-to-br ${project.gradient} p-6 rounded-xl border-2 border-white transition-transform hover:scale-105`}>
-                <h3 className="font-comic text-xl text-cyan-400 mb-3">{project.title}</h3>
-                <p className="text-sm mb-3">{project.description}</p>
+              <div key={index} className="bg-gray-100 p-6 border-2 outset border-gray-400">
+                <h3 className="font-comic text-xl text-blue-800 mb-3">{project.title}</h3>
+                <p className="text-sm mb-3 text-black">{project.description}</p>
                 <div className="flex gap-2 flex-wrap">
                   {project.tags.map((tag, tagIndex) => (
-                    <span key={tagIndex} className="bg-black text-yellow-400 px-2 py-1 text-xs rounded font-pixel">
+                    <span key={tagIndex} className="bg-blue-800 text-white px-2 py-1 text-xs font-verdana border border-black">
                       {tag}
                     </span>
                   ))}
@@ -151,10 +151,10 @@ export default function Home() {
         
         {/* Photo Zone */}
         <section className="retro-container p-8 mb-8">
-          <h2 className="font-comic text-4xl text-pink-400 mb-6 text-center neon-text">
-            📸 My Photo Zone 📸
+          <h2 className="font-comic text-4xl text-red-800 mb-6 text-center">
+            My Photo Zone
           </h2>
-          <p className="text-center mb-8 font-verdana">Random pics from my adventures and things I love!</p>
+          <p className="text-center mb-8 font-verdana text-black">Random pics from my adventures and things I love!</p>
           
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center">
             {photos.map((photo, index) => (
@@ -170,22 +170,21 @@ export default function Home() {
         
         {/* Music Section */}
         <section className="retro-container p-8 mb-8">
-          <h2 className="font-comic text-4xl text-cyan-400 mb-6 text-center neon-text">
-            🎵 My Soundtrack 🎵
+          <h2 className="font-comic text-4xl text-green-800 mb-6 text-center">
+            My Music Player
           </h2>
-          <p className="text-center mb-6 font-verdana">Vibes from my Spotify Liked Songs!</p>
+          <p className="text-center mb-6 font-verdana text-black">Check out my tunes on Spotify!</p>
           
-          <div className="bg-black rounded-xl p-4 border-2 border-green-400">
-            <div className="text-center text-yellow-400 font-comic mb-4">🎧 SPOTIFY PLAYER 🎧</div>
-            <div className="bg-gray-800 h-80 rounded-lg flex items-center justify-center">
+          <div className="bg-gray-200 p-4 border-2 inset border-gray-400">
+            <div className="text-center text-black font-comic mb-4 bg-blue-800 text-white p-2 border-2 border-black">SPOTIFY PLAYER</div>
+            <div className="bg-white h-80 border-2 inset border-gray-400 flex items-center justify-center">
               <iframe 
                 src="https://open.spotify.com/embed/user/312jm37lavwanfdvn5rbam2olzym" 
                 width="100%" 
                 height="300" 
                 frameBorder="0" 
-                allowTransparency={true}
+                allowtransparency="true"
                 allow="encrypted-media"
-                className="rounded-lg"
                 title="Spotify Player"
               />
             </div>
@@ -194,8 +193,8 @@ export default function Home() {
         
         {/* Links Section */}
         <section className="retro-container p-8 mb-8">
-          <h2 className="font-comic text-4xl text-yellow-400 mb-6 text-center neon-text">
-            🔗 Find Me Around The Web 🔗
+          <h2 className="font-comic text-4xl text-purple-800 mb-6 text-center">
+            Find Me Around The Web
           </h2>
           
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
