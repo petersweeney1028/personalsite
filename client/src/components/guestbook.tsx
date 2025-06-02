@@ -65,9 +65,9 @@ export function Guestbook() {
   };
 
   return (
-    <section className="guestbook p-8 mb-8 rounded-xl">
-      <h2 className="font-comic text-4xl text-purple-600 mb-6 text-center">
-        📝 Sign My Guestbook! 📝
+    <section className="retro-container p-8 mb-8">
+      <h2 className="font-comic text-4xl text-red-800 mb-6 text-center">
+        Sign My Guestbook!
       </h2>
       <p className="text-center mb-6 font-verdana text-black">Leave me a message like the good old days!</p>
       
@@ -82,14 +82,14 @@ export function Guestbook() {
             <div 
               key={entry.id} 
               className={`${
-                index % 2 === 0 ? 'bg-yellow-100' : 'bg-blue-100'
-              } border-2 border-purple-600 p-4 rounded-lg mb-4`}
+                index % 2 === 0 ? 'bg-yellow-200' : 'bg-cyan-200'
+              } border-2 outset border-gray-400 p-4 mb-4`}
             >
               <div className="flex justify-between items-start mb-2">
-                <strong className="font-comic text-purple-600">{entry.name}</strong>
-                <span className="text-xs text-gray-600">{formatDate(entry.createdAt)}</span>
+                <strong className="font-comic text-blue-800">{entry.name}</strong>
+                <span className="text-xs text-gray-800">{formatDate(entry.createdAt)}</span>
               </div>
-              <p className="text-black">{entry.message}</p>
+              <p className="text-black font-verdana">{entry.message}</p>
             </div>
           ))
         )}
@@ -103,7 +103,7 @@ export function Guestbook() {
             placeholder="Your Name *" 
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="p-3 border-2 border-purple-600 rounded-lg font-verdana text-black"
+            className="p-3 border-2 inset border-gray-400 font-verdana text-black"
             required
           />
           <input 
@@ -111,7 +111,7 @@ export function Guestbook() {
             placeholder="Your Email (optional)" 
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="p-3 border-2 border-purple-600 rounded-lg font-verdana text-black"
+            className="p-3 border-2 inset border-gray-400 font-verdana text-black"
           />
         </div>
         <textarea 
@@ -119,15 +119,15 @@ export function Guestbook() {
           rows={4} 
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          className="w-full p-3 border-2 border-purple-600 rounded-lg font-verdana text-black"
+          className="w-full p-3 border-2 inset border-gray-400 font-verdana text-black"
           required
         />
         <button 
           type="submit" 
           disabled={createEntryMutation.isPending}
-          className="myspace-btn font-comic px-6 py-3 rounded-lg disabled:opacity-50 disabled:cursor-not-allowed"
+          className="myspace-btn font-comic px-6 py-3 disabled:opacity-50 disabled:cursor-not-allowed"
         >
-          {createEntryMutation.isPending ? 'Signing...' : 'Sign Guestbook! ✍️'}
+          {createEntryMutation.isPending ? 'Signing...' : 'Sign Guestbook!'}
         </button>
       </form>
     </section>

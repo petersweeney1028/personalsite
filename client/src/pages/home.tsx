@@ -83,9 +83,7 @@ export default function Home() {
 
   return (
     <div className="retro-bg relative overflow-x-hidden">
-      <MouseTrail />
       <FloatingTimeWidget />
-      <Sparkles />
       
       <div className="container mx-auto max-w-6xl px-4 py-8">
         
@@ -183,7 +181,7 @@ export default function Home() {
                 width="100%" 
                 height="300" 
                 frameBorder="0" 
-                allowtransparency="true"
+                allowTransparency={true}
                 allow="encrypted-media"
                 title="Spotify Player"
               />
@@ -214,15 +212,15 @@ export default function Home() {
         
         {/* Footer */}
         <footer className="text-center py-8">
-          <div className="font-comic text-cyan-400 mb-4">
-            Made with 💖 in the spirit of the early web
+          <div className="font-comic text-blue-800 mb-4">
+            Made with love in the spirit of the early web
           </div>
-          <div className="font-pixel text-xs text-yellow-400">
-            © 2024 Peter's Retro Space • Best viewed with nostalgia
+          <div className="font-verdana text-xs text-black">
+            © 2024 Peter's Homepage • Best viewed with Internet Explorer 6.0
           </div>
           <div className="mt-4 animate-bounce cursor-pointer" onClick={scrollToTop}>
             <span className="text-2xl">⬆️</span>
-            <div className="font-comic text-sm text-pink-400">Scroll back to top!</div>
+            <div className="font-comic text-sm text-purple-800">Back to Top!</div>
           </div>
         </footer>
         
