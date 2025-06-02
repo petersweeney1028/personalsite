@@ -1,0 +1,252 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Import retro fonts */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 20 14.3% 4.1%;
+  --muted: 60 4.8% 95.9%;
+  --muted-foreground: 25 5.3% 44.7%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 20 14.3% 4.1%;
+  --card: 0 0% 100%;
+  --card-foreground: 20 14.3% 4.1%;
+  --border: 20 5.9% 90%;
+  --input: 20 5.9% 90%;
+  --primary: 207 90% 54%;
+  --primary-foreground: 211 100% 99%;
+  --secondary: 60 4.8% 95.9%;
+  --secondary-foreground: 24 9.8% 10%;
+  --accent: 60 4.8% 95.9%;
+  --accent-foreground: 24 9.8% 10%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 60 9.1% 97.8%;
+  --ring: 20 14.3% 4.1%;
+  --radius: 0.5rem;
+  
+  /* Retro neon colors */
+  --neon-pink: 300 100% 50%; /* #FF00FF */
+  --neon-cyan: 180 100% 50%; /* #00FFFF */
+  --neon-yellow: 60 100% 50%; /* #FFFF00 */
+  --retro-orange: 16 100% 60%; /* #FF6B35 */
+  --retro-magenta: 332 89% 68%; /* #F72585 */
+}
+
+.dark {
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  --popover: 240 10% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --card: 240 10% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --primary: 207 90% 54%;
+  --primary-foreground: 211 100% 99%;
+  --secondary: 240 3.7% 15.9%;
+  --secondary-foreground: 0 0% 98%;
+  --accent: 240 3.7% 15.9%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --ring: 240 4.9% 83.9%;
+  --radius: 0.5rem;
+}
+
+/* Custom retro animations */
+@keyframes sparkle {
+  0%, 100% { opacity: 0; transform: scale(0); }
+  50% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes rotate-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes pulse-neon {
+  0%, 100% { 
+    box-shadow: 0 0 20px hsl(var(--neon-pink)), 0 0 40px hsl(var(--neon-pink)); 
+  }
+  50% { 
+    box-shadow: 0 0 10px hsl(var(--neon-cyan)), 0 0 20px hsl(var(--neon-cyan)); 
+  }
+}
+
+/* Retro font classes */
+.font-comic {
+  font-family: 'Comic Sans MS', cursive;
+}
+
+.font-pixel {
+  font-family: 'Press Start 2P', monospace;
+}
+
+.font-verdana {
+  font-family: 'Verdana', Arial, sans-serif;
+}
+
+/* Custom utility classes */
+.animate-sparkle {
+  animation: sparkle 2s infinite;
+}
+
+.animate-blink {
+  animation: blink 1s infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-rotate-slow {
+  animation: rotate-slow 4s linear infinite;
+}
+
+.animate-gradient {
+  animation: gradient 8s ease infinite;
+}
+
+.animate-pulse-neon {
+  animation: pulse-neon 2s infinite;
+}
+
+/* Retro gradient background */
+.retro-bg {
+  background: linear-gradient(-45deg, #FF006E, #8338EC, #06FFA5, #FFFF00, #FF6B35);
+  background-size: 400% 400%;
+  animation: gradient 8s ease infinite;
+  min-height: 100vh;
+}
+
+/* Sparkle effects */
+.sparkle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: hsl(var(--neon-yellow));
+  border-radius: 50%;
+  animation: sparkle 2s infinite;
+  pointer-events: none;
+}
+
+/* Polaroid photo styling */
+.polaroid {
+  background: white;
+  padding: 15px 15px 50px 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transform: rotate(-2deg);
+  transition: all 0.3s ease;
+}
+
+.polaroid:hover {
+  transform: rotate(0deg) scale(1.05);
+  z-index: 10;
+}
+
+.polaroid:nth-child(even) {
+  transform: rotate(2deg);
+}
+
+.polaroid:nth-child(even):hover {
+  transform: rotate(0deg) scale(1.05);
+}
+
+/* MySpace style buttons */
+.myspace-btn {
+  background: linear-gradient(45deg, hsl(var(--neon-pink)), hsl(var(--neon-cyan)));
+  border: 2px solid #FFFFFF;
+  color: white;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+  transition: all 0.3s ease;
+}
+
+.myspace-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px hsl(var(--neon-pink) / 0.8);
+}
+
+/* Retro container styling */
+.retro-container {
+  background: rgba(0,0,0,0.8);
+  border: 3px solid hsl(var(--neon-cyan));
+  border-radius: 15px;
+  box-shadow: 0 0 30px hsl(var(--neon-cyan) / 0.5);
+}
+
+/* Guestbook styling */
+.guestbook {
+  background: rgba(255,255,255,0.95);
+  border: 3px dashed hsl(var(--neon-pink));
+}
+
+/* Mouse trail effect */
+.trail {
+  position: fixed;
+  pointer-events: none;
+  width: 6px;
+  height: 6px;
+  background: hsl(var(--neon-yellow));
+  border-radius: 50%;
+  z-index: 9999;
+  transition: all 0.3s ease;
+}
+
+/* Neon text glow effect */
+.neon-text {
+  color: hsl(var(--neon-cyan));
+  text-shadow: 
+    0 0 5px hsl(var(--neon-cyan)),
+    0 0 10px hsl(var(--neon-cyan)),
+    0 0 20px hsl(var(--neon-cyan));
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, hsl(var(--neon-pink)), hsl(var(--neon-cyan)));
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, hsl(var(--neon-cyan)), hsl(var(--neon-pink)));
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-verdana antialiased text-white;
+  }
+}
