@@ -149,16 +149,35 @@ export default function Home() {
   const [openWindows, setOpenWindows] = useState<string[]>(['clock', 'spotify']);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
+  const [windowZIndices, setWindowZIndices] = useState<Record<string, number>>({
+    clock: 100,
+    spotify: 101
+  });
+  const [highestZIndex, setHighestZIndex] = useState(101);
 
   const openWindow = (windowId: string) => {
     console.log(`Opening window: ${windowId}`);
     console.log(`Current open windows:`, openWindows);
+    
     if (!openWindows.includes(windowId)) {
       setOpenWindows([...openWindows, windowId]);
       console.log(`Window ${windowId} added to open windows`);
+      
+      // Set z-index for new window
+      const newZIndex = highestZIndex + 1;
+      setWindowZIndices(prev => ({ ...prev, [windowId]: newZIndex }));
+      setHighestZIndex(newZIndex);
     } else {
+      // If window is already open, bring it to front
+      bringToFront(windowId);
       console.log(`Window ${windowId} already open`);
     }
+  };
+
+  const bringToFront = (windowId: string) => {
+    const newZIndex = highestZIndex + 1;
+    setWindowZIndices(prev => ({ ...prev, [windowId]: newZIndex }));
+    setHighestZIndex(newZIndex);
   };
 
   const closeWindow = (windowId: string) => {
@@ -204,6 +223,8 @@ export default function Home() {
       <ClockWeatherWindow
         isOpen={openWindows.includes('clock')}
         onClose={() => closeWindow('clock')}
+        zIndex={windowZIndices.clock || 100}
+        onFocus={() => bringToFront('clock')}
       />
 
       {/* Spotify Window */}

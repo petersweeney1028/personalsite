@@ -8,6 +8,8 @@ interface DesktopWindowProps {
   initialPosition?: { x: number; y: number };
   width?: number;
   height?: number;
+  zIndex?: number;
+  onFocus?: () => void;
 }
 
 export function DesktopWindow({ 
@@ -17,7 +19,9 @@ export function DesktopWindow({
   onClose, 
   initialPosition = { x: 100, y: 100 },
   width = 400,
-  height = 300
+  height = 300,
+  zIndex = 100,
+  onFocus
 }: DesktopWindowProps) {
   const [position, setPosition] = useState(initialPosition);
   const [size, setSize] = useState({ width, height });
@@ -29,6 +33,7 @@ export function DesktopWindow({
   const windowRef = useRef<HTMLDivElement>(null);
 
   const handleMouseDown = (e: React.MouseEvent) => {
+    if (onFocus) onFocus();
     if (windowRef.current) {
       const rect = windowRef.current.getBoundingClientRect();
       setDragOffset({
@@ -37,6 +42,10 @@ export function DesktopWindow({
       });
       setIsDragging(true);
     }
+  };
+
+  const handleWindowClick = () => {
+    if (onFocus) onFocus();
   };
 
   const handleResizeMouseDown = (e: React.MouseEvent, direction: string) => {
@@ -119,8 +128,9 @@ export function DesktopWindow({
         top: position.y,
         width: size.width,
         height: size.height,
-        zIndex: 100
+        zIndex: zIndex
       }}
+      onClick={handleWindowClick}
     >
       <div className="window-titlebar" onMouseDown={handleMouseDown}>
         <span>{title}</span>
