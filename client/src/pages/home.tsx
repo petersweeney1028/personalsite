@@ -151,8 +151,13 @@ export default function Home() {
   const [lightboxIndex, setLightboxIndex] = useState(0);
 
   const openWindow = (windowId: string) => {
+    console.log(`Opening window: ${windowId}`);
+    console.log(`Current open windows:`, openWindows);
     if (!openWindows.includes(windowId)) {
       setOpenWindows([...openWindows, windowId]);
+      console.log(`Window ${windowId} added to open windows`);
+    } else {
+      console.log(`Window ${windowId} already open`);
     }
   };
 

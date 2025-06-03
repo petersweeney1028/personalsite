@@ -6,15 +6,22 @@ interface DesktopIconProps {
 }
 
 export function DesktopIcon({ icon, label, onDoubleClick, position }: DesktopIconProps) {
+  const handleClick = () => {
+    console.log(`Desktop icon clicked: ${label}`);
+    onDoubleClick();
+  };
+
   return (
     <div
       className="desktop-icon"
       style={{
         position: 'absolute',
         left: position.x,
-        top: position.y
+        top: position.y,
+        zIndex: 10
       }}
-      onDoubleClick={onDoubleClick}
+      onDoubleClick={handleClick}
+      onClick={handleClick}
     >
       <div className="icon-emoji">{icon}</div>
       <span>{label}</span>
