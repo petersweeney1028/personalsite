@@ -291,7 +291,7 @@ export default function Home() {
                 </div>
               ))}
             </div>
-            <p className="text-xs text-gray-600 mt-3 font-serif">Click any image to view in full size</p>
+            <p className="text-xs mt-3 font-serif" style={{ color: '#F2B5D4' }}>Click any image to view in full size</p>
           </div>
         </DesktopWindow>
       )}
@@ -312,9 +312,9 @@ export default function Home() {
             <h3 className="font-bold mb-3 font-serif" style={{ color: '#F2B5D4' }}>My Blog Posts</h3>
             <div className="space-y-2 text-sm max-h-60 overflow-y-auto">
               {blogPosts.map((post, index) => (
-                <div key={index} className="p-3 bg-white border border-gray-400 rounded cursor-pointer hover:bg-gray-50">
+                <div key={index} className="p-3 border rounded cursor-pointer hover:opacity-80" style={{ backgroundColor: '#403D39', borderColor: '#C1DDB9' }}>
                   <a href={post.url} target="_blank" rel="noopener noreferrer" className="text-decoration-none">
-                    <strong>{post.title}</strong>
+                    <strong style={{ color: '#F2B5D4' }}>{post.title}</strong>
                   </a>
                 </div>
               ))}
@@ -341,29 +341,31 @@ export default function Home() {
           zIndex={windowZIndices.reading || 100}
           onFocus={() => bringToFront('reading')}
         >
-          <div className="p-4">
-            <h3 className="font-bold mb-3 font-serif" style={{ color: '#8B4513' }}>Books & Notes</h3>
+          <div className="p-4" style={{ backgroundColor: '#403D39', color: '#F2B5D4' }}>
+            <h3 className="font-bold mb-3 font-serif" style={{ color: '#F2B5D4' }}>Books & Notes</h3>
             <div className="grid grid-cols-2 gap-3">
               {books.map((book, index) => (
                 <div 
                   key={index} 
-                  className="p-3 bg-white border border-gray-400 rounded cursor-pointer hover:bg-gray-50 transition-colors"
+                  className="p-3 border rounded cursor-pointer hover:opacity-80 transition-colors"
+                  style={{ backgroundColor: '#403D39', borderColor: '#C1DDB9' }}
                   title={book.notes}
                 >
                   <img 
                     src={book.cover}
                     alt={book.title}
-                    className="w-full h-24 object-cover border border-gray-300 rounded mb-2"
+                    className="w-full h-24 object-cover border rounded mb-2"
+                    style={{ borderColor: '#C1DDB9' }}
                   />
                   <div className="text-xs">
-                    <div className="font-bold">{book.title}</div>
-                    <div className="text-gray-600">{book.author}</div>
-                    <div className="text-gray-500 mt-1 text-xs">{book.notes}</div>
+                    <div className="font-bold" style={{ color: '#F2B5D4' }}>{book.title}</div>
+                    <div style={{ color: '#F2B5D4' }}>{book.author}</div>
+                    <div className="mt-1 text-xs" style={{ color: '#F2B5D4' }}>{book.notes}</div>
                   </div>
                 </div>
               ))}
             </div>
-            <p className="text-xs text-gray-600 mt-3 font-serif">Hover over books to see my notes</p>
+            <p className="text-xs mt-3 font-serif" style={{ color: '#F2B5D4' }}>Hover over books to see my notes</p>
           </div>
         </DesktopWindow>
       )}
