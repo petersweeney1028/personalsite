@@ -1,6 +1,7 @@
-import { MouseTrail } from "@/components/mouse-trail";
-import { FloatingTimeWidget } from "@/components/floating-time-widget";
-import { Sparkles } from "@/components/sparkles";
+import { useState } from 'react';
+import { DesktopWindow } from "@/components/desktop-window";
+import { DesktopIcon } from "@/components/desktop-icon";
+import { Taskbar } from "@/components/taskbar";
 import { PolaroidPhoto } from "@/components/polaroid-photo";
 import { MySpaceButton } from "@/components/myspace-button";
 import { Guestbook } from "@/components/guestbook";
@@ -73,124 +74,160 @@ const projects = [
 ];
 
 export default function Home() {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+  const [openWindows, setOpenWindows] = useState<string[]>([]);
+
+  const openWindow = (windowId: string) => {
+    if (!openWindows.includes(windowId)) {
+      setOpenWindows([...openWindows, windowId]);
+    }
   };
 
+  const closeWindow = (windowId: string) => {
+    setOpenWindows(openWindows.filter(id => id !== windowId));
+  };
+
+  const desktopIcons = [
+    { id: 'about', icon: '👤', label: 'About Me', position: { x: 30, y: 30 } },
+    { id: 'projects', icon: '🛠️', label: 'Projects', position: { x: 30, y: 120 } },
+    { id: 'photos', icon: '📸', label: 'Photos', position: { x: 30, y: 210 } },
+    { id: 'music', icon: '🎵', label: 'Music', position: { x: 30, y: 300 } },
+    { id: 'links', icon: '🔗', label: 'Links', position: { x: 30, y: 390 } },
+    { id: 'guestbook', icon: '📝', label: 'Guestbook', position: { x: 30, y: 480 } },
+    { id: 'footprint', icon: '🔒', label: 'Footprint', position: { x: 120, y: 30 } },
+    { id: 'blog', icon: '📖', label: 'Blog', position: { x: 120, y: 120 } }
+  ];
+
   return (
-    <div className="retro-bg relative overflow-x-hidden">
-      <FloatingTimeWidget />
-      
-      <div className="container mx-auto max-w-6xl px-4 py-8">
-        
-        {/* Welcome Section */}
-        <section className="retro-container p-8 mb-8 text-center">
-          <div className="mb-6">
-            <div className="inline-block bg-yellow-300 text-black font-comic text-2xl px-6 py-3 border-2 border-black animate-blink font-bold">
-              ★ PETER'S DIGITAL SPACE ★
+    <div className="desktop-bg relative">
+      {/* Desktop Icons */}
+      {desktopIcons.map(icon => (
+        <DesktopIcon
+          key={icon.id}
+          icon={icon.icon}
+          label={icon.label}
+          position={icon.position}
+          onDoubleClick={() => openWindow(icon.id)}
+        />
+      ))}
+
+      {/* Windows */}
+      <DesktopWindow
+        title="About Me - Peter Sweeney"
+        isOpen={openWindows.includes('about')}
+        onClose={() => closeWindow('about')}
+        initialPosition={{ x: 200, y: 100 }}
+        width={500}
+        height={400}
+      >
+        <div className="p-4">
+          <div className="flex items-start gap-4 mb-4">
+            <img 
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100" 
+              alt="Peter Sweeney" 
+              className="w-20 h-20 border-2 inset border-gray-400"
+            />
+            <div>
+              <h3 className="font-bold text-lg mb-2">Peter Sweeney</h3>
+              <p className="text-sm">
+                Growth Lead at Footprint • Ex-Goldman Sachs • Ex-Founder of ALAO
+              </p>
             </div>
           </div>
-          
-          <h1 className="font-comic text-4xl md:text-6xl lg:text-8xl mb-6 text-blue-800">
-            PETER'S HOMEPAGE
-          </h1>
-          
-          <div className="flex flex-col md:flex-row items-center gap-8">
-            <div className="polaroid">
-              <img 
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&h=300" 
-                alt="Peter's profile photo" 
-                className="w-48 h-48 object-cover rounded"
-              />
-              <div className="text-center mt-3 font-comic text-black">That's me! 📸</div>
-            </div>
-            
-            <div className="text-left max-w-2xl">
-              <p className="font-verdana text-lg mb-4 leading-relaxed text-black">
-                Hey everyone - I'm Peter. I currently lead growth at Footprint, where we help fintechs and financial institutions verify identity and prevent fraud. 
-                Former investment banker at Goldman Sachs, ex-founder of ALAO. I love building things and exploring new tech.
-              </p>
-              <div className="flex gap-4 justify-center md:justify-start flex-wrap">
-                <span className="bg-red-500 text-white px-3 py-1 border-2 border-black font-comic">Growth Lead</span>
-                <span className="bg-blue-500 text-white px-3 py-1 border-2 border-black font-comic">Ex-Founder</span>
-                <span className="bg-green-500 text-white px-3 py-1 border-2 border-black font-comic">Builder</span>
+          <p className="text-sm leading-relaxed">
+            Hey everyone - I'm Peter. I currently lead growth at Footprint, where we help fintechs 
+            and financial institutions verify identity and prevent fraud. Former investment banker 
+            at Goldman Sachs, ex-founder of ALAO. I love building things and exploring new tech.
+            Always looking to meet cool and interesting people.
+          </p>
+        </div>
+      </DesktopWindow>
+
+      <DesktopWindow
+        title="Current Projects"
+        isOpen={openWindows.includes('projects')}
+        onClose={() => closeWindow('projects')}
+        initialPosition={{ x: 250, y: 150 }}
+        width={600}
+        height={500}
+      >
+        <div className="p-4">
+          {projects.map((project, index) => (
+            <div key={index} className="mb-4 p-3 bg-white border-2 inset border-gray-400">
+              <h4 className="font-bold text-sm mb-1">{project.title}</h4>
+              <p className="text-xs mb-2">{project.description}</p>
+              <div className="flex gap-1 flex-wrap">
+                {project.tags.map((tag, tagIndex) => (
+                  <span key={tagIndex} className="bg-blue-800 text-white px-1 py-0.5 text-xs">
+                    {tag}
+                  </span>
+                ))}
               </div>
             </div>
-          </div>
-        </section>
-        
-        {/* What I'm Up To Section */}
-        <section className="retro-container p-8 mb-8">
-          <h2 className="font-comic text-4xl text-purple-800 mb-6 text-center">
-            Current Projects & Side Hustles
-          </h2>
-          
-          <div className="grid md:grid-cols-2 gap-6">
-            {projects.map((project, index) => (
-              <div key={index} className="bg-gray-100 p-6 border-2 outset border-gray-400">
-                <h3 className="font-comic text-xl text-blue-800 mb-3">{project.title}</h3>
-                <p className="text-sm mb-3 text-black">{project.description}</p>
-                <div className="flex gap-2 flex-wrap">
-                  {project.tags.map((tag, tagIndex) => (
-                    <span key={tagIndex} className="bg-blue-800 text-white px-2 py-1 text-xs font-verdana border border-black">
-                      {tag}
-                    </span>
-                  ))}
+          ))}
+        </div>
+      </DesktopWindow>
+
+      <DesktopWindow
+        title="Photo Gallery"
+        isOpen={openWindows.includes('photos')}
+        onClose={() => closeWindow('photos')}
+        initialPosition={{ x: 300, y: 200 }}
+        width={500}
+        height={400}
+      >
+        <div className="p-4">
+          <p className="text-sm mb-4">Surfing, snowboarding, tennis, good food with friends, and BBQ!</p>
+          <div className="grid grid-cols-3 gap-2">
+            {photos.map((photo, index) => (
+              <div key={index} className="polaroid" style={{ transform: 'none', margin: 0 }}>
+                <img 
+                  src={photo.src}
+                  alt={photo.alt}
+                  className="w-full h-20 object-cover"
+                />
+                <div className="text-center mt-1 text-xs font-comic text-black">
+                  {photo.caption}
                 </div>
               </div>
             ))}
           </div>
-        </section>
-        
-        {/* Photo Zone */}
-        <section className="retro-container p-8 mb-8">
-          <h2 className="font-comic text-4xl text-red-800 mb-6 text-center">
-            Fun Stuff & Adventures
-          </h2>
-          <p className="text-center mb-8 font-verdana text-black">Surfing, snowboarding, tennis, good food with friends, and BBQ!</p>
-          
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center">
-            {photos.map((photo, index) => (
-              <PolaroidPhoto 
-                key={index}
-                src={photo.src}
-                alt={photo.alt}
-                caption={photo.caption}
-              />
-            ))}
+        </div>
+      </DesktopWindow>
+
+      <DesktopWindow
+        title="Spotify Music Player"
+        isOpen={openWindows.includes('music')}
+        onClose={() => closeWindow('music')}
+        initialPosition={{ x: 350, y: 100 }}
+        width={400}
+        height={350}
+      >
+        <div className="p-4">
+          <p className="text-sm mb-4">Check out my tunes on Spotify!</p>
+          <div className="bg-white border-2 inset border-gray-400 h-64">
+            <iframe 
+              src="https://open.spotify.com/embed/user/312jm37lavwanfdvn5rbam2olzym" 
+              width="100%" 
+              height="100%" 
+              frameBorder="0" 
+              allowTransparency={true}
+              allow="encrypted-media"
+              title="Spotify Player"
+            />
           </div>
-        </section>
-        
-        {/* Music Section */}
-        <section className="retro-container p-8 mb-8">
-          <h2 className="font-comic text-4xl text-green-800 mb-6 text-center">
-            My Music Player
-          </h2>
-          <p className="text-center mb-6 font-verdana text-black">Check out my tunes on Spotify!</p>
-          
-          <div className="bg-gray-200 p-4 border-2 inset border-gray-400">
-            <div className="text-center text-black font-comic mb-4 bg-blue-800 text-white p-2 border-2 border-black">SPOTIFY PLAYER</div>
-            <div className="bg-white h-80 border-2 inset border-gray-400 flex items-center justify-center">
-              <iframe 
-                src="https://open.spotify.com/embed/user/312jm37lavwanfdvn5rbam2olzym" 
-                width="100%" 
-                height="300" 
-                frameBorder="0" 
-                allowTransparency={true}
-                allow="encrypted-media"
-                title="Spotify Player"
-              />
-            </div>
-          </div>
-        </section>
-        
-        {/* Links Section */}
-        <section className="retro-container p-8 mb-8">
-          <h2 className="font-comic text-4xl text-purple-800 mb-6 text-center">
-            Find Me Around The Web
-          </h2>
-          
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        </div>
+      </DesktopWindow>
+
+      <DesktopWindow
+        title="My Links"
+        isOpen={openWindows.includes('links')}
+        onClose={() => closeWindow('links')}
+        initialPosition={{ x: 400, y: 150 }}
+        width={350}
+        height={300}
+      >
+        <div className="p-4">
+          <div className="grid grid-cols-2 gap-2">
             {socialLinks.map((link, index) => (
               <MySpaceButton 
                 key={index}
@@ -200,26 +237,80 @@ export default function Home() {
               />
             ))}
           </div>
-        </section>
-        
-        {/* Guestbook Section */}
-        <Guestbook />
-        
-        {/* Footer */}
-        <footer className="text-center py-8">
-          <div className="font-comic text-blue-800 mb-4">
-            Always looking to meet cool and interesting people
+        </div>
+      </DesktopWindow>
+
+      <DesktopWindow
+        title="Guestbook"
+        isOpen={openWindows.includes('guestbook')}
+        onClose={() => closeWindow('guestbook')}
+        initialPosition={{ x: 150, y: 50 }}
+        width={500}
+        height={600}
+      >
+        <div className="p-2">
+          <Guestbook />
+        </div>
+      </DesktopWindow>
+
+      <DesktopWindow
+        title="Footprint - Identity Verification"
+        isOpen={openWindows.includes('footprint')}
+        onClose={() => closeWindow('footprint')}
+        initialPosition={{ x: 450, y: 200 }}
+        width={400}
+        height={300}
+      >
+        <div className="p-4">
+          <h3 className="font-bold mb-3">Footprint</h3>
+          <p className="text-sm mb-3">
+            I lead growth at Footprint, where we help fintechs, financial institutions 
+            and marketplaces verify identity, prevent fraud and vault sensitive information.
+          </p>
+          <button 
+            className="myspace-btn text-xs px-3 py-2"
+            onClick={() => window.open('https://www.onefootprint.com', '_blank')}
+          >
+            Visit Footprint →
+          </button>
+        </div>
+      </DesktopWindow>
+
+      <DesktopWindow
+        title="My Blog on Medium"
+        isOpen={openWindows.includes('blog')}
+        onClose={() => closeWindow('blog')}
+        initialPosition={{ x: 500, y: 250 }}
+        width={450}
+        height={350}
+      >
+        <div className="p-4">
+          <h3 className="font-bold mb-3">Recent Blog Posts</h3>
+          <div className="space-y-2 text-xs">
+            <div className="p-2 bg-white border border-gray-400">
+              <strong>Sports Talk Radio: The Best Community Building Medium</strong>
+            </div>
+            <div className="p-2 bg-white border border-gray-400">
+              <strong>Why the F*ck Can't I Get Sabrina Carpenter Out of My Head?</strong>
+            </div>
+            <div className="p-2 bg-white border border-gray-400">
+              <strong>The Erosion and Rediscovery of Personal Style in the Age of AI</strong>
+            </div>
+            <div className="p-2 bg-white border border-gray-400">
+              <strong>I Am Looking for Adventures</strong>
+            </div>
           </div>
-          <div className="font-verdana text-xs text-black">
-            © 2024 Peter Sweeney • DM me on Twitter if you want to chat
-          </div>
-          <div className="mt-4 animate-bounce cursor-pointer" onClick={scrollToTop}>
-            <span className="text-2xl">⬆️</span>
-            <div className="font-comic text-sm text-purple-800">Back to Top!</div>
-          </div>
-        </footer>
-        
-      </div>
+          <button 
+            className="myspace-btn text-xs px-3 py-2 mt-3"
+            onClick={() => window.open('https://medium.com/@peter_sweeney', '_blank')}
+          >
+            Read More on Medium →
+          </button>
+        </div>
+      </DesktopWindow>
+
+      {/* Taskbar */}
+      <Taskbar />
     </div>
   );
 }

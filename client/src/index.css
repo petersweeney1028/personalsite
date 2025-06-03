@@ -133,10 +133,12 @@
   animation: pulse-neon 2s infinite;
 }
 
-/* Early 2000s tiled background */
-.retro-bg {
-  background: #E6E6FA url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><circle cx="2" cy="2" r="1" fill="%23C0C0C0" opacity="0.3"/><circle cx="18" cy="18" r="1" fill="%23C0C0C0" opacity="0.3"/></svg>') repeat;
+/* Desktop OS background */
+.desktop-bg {
+  background: linear-gradient(135deg, #0066CC 0%, #003399 100%);
   min-height: 100vh;
+  position: relative;
+  overflow: hidden;
 }
 
 /* Sparkle effects */
@@ -187,11 +189,107 @@
   border: 2px inset #C0C0C0;
 }
 
-/* Early 2000s container styling */
-.retro-container {
-  background: #FFFFFF;
+/* Desktop window styling */
+.desktop-window {
+  background: #C0C0C0;
   border: 2px outset #C0C0C0;
-  box-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  box-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  position: absolute;
+  min-width: 300px;
+  min-height: 200px;
+}
+
+.window-titlebar {
+  background: linear-gradient(to right, #0066CC, #0099FF);
+  color: white;
+  padding: 4px 8px;
+  font-family: 'MS Sans Serif', sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: move;
+}
+
+.window-content {
+  background: #C0C0C0;
+  padding: 8px;
+  height: calc(100% - 24px);
+  overflow: auto;
+}
+
+.desktop-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 64px;
+  cursor: pointer;
+  margin: 8px;
+  padding: 4px;
+  border: 1px solid transparent;
+  color: white;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.8);
+}
+
+.desktop-icon:hover {
+  background: rgba(255,255,255,0.2);
+  border: 1px dotted white;
+}
+
+.desktop-icon.selected {
+  background: rgba(255,255,255,0.3);
+  border: 1px dotted white;
+}
+
+.desktop-icon img {
+  width: 32px;
+  height: 32px;
+  margin-bottom: 4px;
+}
+
+.desktop-icon span {
+  font-size: 11px;
+  text-align: center;
+  font-family: 'MS Sans Serif', sans-serif;
+}
+
+.taskbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30px;
+  background: linear-gradient(to bottom, #C0C0C0, #808080);
+  border-top: 1px solid #FFFFFF;
+  display: flex;
+  align-items: center;
+  padding: 0 4px;
+  z-index: 1000;
+}
+
+.start-button {
+  background: linear-gradient(to bottom, #C0C0C0, #808080);
+  border: 1px outset #C0C0C0;
+  padding: 4px 12px;
+  font-family: 'MS Sans Serif', sans-serif;
+  font-size: 11px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.start-button:active {
+  border: 1px inset #C0C0C0;
+}
+
+.taskbar-time {
+  margin-left: auto;
+  font-family: 'MS Sans Serif', sans-serif;
+  font-size: 11px;
+  background: #FFFFCC;
+  border: 1px inset #C0C0C0;
+  padding: 2px 8px;
 }
 
 /* Guestbook styling */
