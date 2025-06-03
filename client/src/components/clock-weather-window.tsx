@@ -75,22 +75,22 @@ export function ClockWeatherWindow({ isOpen, onClose, zIndex, onFocus }: ClockWe
     >
       <div className="text-center p-2">
         <div className="mb-2">
-          <div className="text-xl font-bold" style={{ color: '#8B4513' }}>
+          <div className="text-xl font-bold" style={{ color: '#F2B5D4' }}>
             {timeStr}
           </div>
-          <div className="text-xs text-gray-600 leading-tight">
+          <div className="text-xs leading-tight" style={{ color: '#F2B5D4' }}>
             {dateStr}
           </div>
         </div>
         
-        <div className="border-t border-gray-300 pt-2">
-          <div className="text-base font-semibold" style={{ color: '#c1ddb9' }}>
+        <div className="border-t pt-2" style={{ borderColor: '#C1DDB9' }}>
+          <div className="text-base font-semibold" style={{ color: '#F2B5D4' }}>
             {weather.temperature}
           </div>
-          <div className="text-xs text-gray-700 leading-tight">
+          <div className="text-xs leading-tight" style={{ color: '#F2B5D4' }}>
             {weather.condition}
           </div>
-          <div className="text-xs text-gray-500">
+          <div className="text-xs" style={{ color: '#F2B5D4' }}>
             {weather.location}
           </div>
         </div>
