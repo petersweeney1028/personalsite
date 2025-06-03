@@ -65,20 +65,26 @@ export function LoadingScreen({ onComplete }: LoadingScreenProps) {
                 border: '3px solid #C1DDB9',
                 borderRadius: '8px',
                 overflow: 'hidden',
-                position: 'relative'
+                position: 'relative',
+                backgroundColor: '#062726',
+                backgroundImage: 'url(https://media.tenor.com/1b2PGgSN-UQAAAAC/80s-commercials-80s-mtv.gif)',
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                backgroundRepeat: 'no-repeat'
               }}
             >
+              {/* Fallback content if GIF doesn't load */}
               <div 
-                className="tenor-gif-embed" 
-                data-postid="14688695" 
-                data-share-method="host" 
-                data-aspect-ratio="1.32231" 
-                data-width="100%"
-                style={{ width: '100%', height: '100%' }}
+                className="w-full h-full flex items-center justify-center"
+                style={{ 
+                  background: 'linear-gradient(45deg, #FFC684, #F2B5D4)',
+                  color: '#403D39'
+                }}
               >
-                <a href="https://tenor.com/view/80s-commercials-80s-mtv-man-on-the-moon-gif-14688695">
-                  80s Commercials 80s Mtv GIF
-                </a>
+                <div className="text-center font-pixel">
+                  <div className="text-xl mb-2">🌙</div>
+                  <div className="text-sm">RETRO VIBES</div>
+                </div>
               </div>
             </div>
             <div 
