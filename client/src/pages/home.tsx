@@ -6,6 +6,7 @@ import { SpotifyWindow } from "@/components/spotify-window";
 import { ClockWeatherWindow } from "@/components/clock-weather-window";
 import { ImageLightbox } from "@/components/image-lightbox";
 import { Guestbook } from "@/components/guestbook";
+import peterHeadshot from "@assets/Peter-Headshot.webp";
 
 const inspirationImages = [
   {
@@ -382,7 +383,7 @@ export default function Home() {
           <div className="p-6 bg-gradient-to-b from-orange-50 to-orange-100 h-full">
             <div className="flex items-start gap-6 mb-6">
               <img 
-                src="/attached_assets/Peter-Headshot.webp" 
+                src={peterHeadshot} 
                 alt="Peter Sweeney" 
                 className="w-24 h-24 border-3 border-orange-300 rounded-lg shadow-lg object-cover"
               />
