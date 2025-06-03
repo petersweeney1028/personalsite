@@ -240,7 +240,7 @@ export default function Home() {
           zIndex={windowZIndices.spotify || 100}
           onFocus={() => bringToFront('spotify')}
         >
-          <div className="p-4">
+          <div className="p-4" style={{ backgroundColor: '#403D39', color: '#F2B5D4' }}>
             <p className="text-sm mb-4 font-serif">Now playing from my Liked Songs collection</p>
             <div className="bg-white border-2 inset border-gray-400 h-64 rounded">
               <iframe 
@@ -274,7 +274,7 @@ export default function Home() {
           zIndex={windowZIndices.inspiration || 100}
           onFocus={() => bringToFront('inspiration')}
         >
-          <div className="p-4">
+          <div className="p-4" style={{ backgroundColor: '#403D39', color: '#F2B5D4' }}>
             <p className="text-sm mb-4 font-serif">Vintage tennis, 70s interiors, and sun-faded aesthetics</p>
             <div className="grid grid-cols-3 gap-2">
               {inspirationImages.map((image, index) => (
@@ -308,8 +308,8 @@ export default function Home() {
           zIndex={windowZIndices.writing || 100}
           onFocus={() => bringToFront('writing')}
         >
-          <div className="p-4">
-            <h3 className="font-bold mb-3 font-serif" style={{ color: '#8B4513' }}>My Blog Posts</h3>
+          <div className="p-4" style={{ backgroundColor: '#403D39', color: '#F2B5D4' }}>
+            <h3 className="font-bold mb-3 font-serif" style={{ color: '#F2B5D4' }}>My Blog Posts</h3>
             <div className="space-y-2 text-sm max-h-60 overflow-y-auto">
               {blogPosts.map((post, index) => (
                 <div key={index} className="p-3 bg-white border border-gray-400 rounded cursor-pointer hover:bg-gray-50">
@@ -380,7 +380,7 @@ export default function Home() {
           zIndex={windowZIndices.work || 100}
           onFocus={() => bringToFront('work')}
         >
-          <div className="p-6 h-full" style={{ background: 'linear-gradient(to bottom, #FFC684, #F2B5D4)' }}>
+          <div className="p-6 h-full" style={{ backgroundColor: '#403D39' }}>
             <div className="flex items-start gap-6 mb-6">
               <img 
                 src={peterHeadshot} 
@@ -389,12 +389,12 @@ export default function Home() {
                 style={{ borderColor: '#C1DDB9' }}
               />
               <div>
-                <h3 className="font-bold text-2xl mb-3 font-serif" style={{ color: '#403D39' }}>Peter Sweeney</h3>
+                <h3 className="font-bold text-2xl mb-3 font-serif" style={{ color: '#F2B5D4' }}>Peter Sweeney</h3>
               </div>
             </div>
             
-            <div className="bg-white rounded-lg border-2 p-5 shadow-md" style={{ borderColor: '#C1DDB9' }}>
-              <div className="space-y-4 text-base font-serif max-h-60 overflow-y-auto leading-relaxed" style={{ color: '#403D39' }}>
+            <div className="rounded-lg border-2 p-5 shadow-md" style={{ backgroundColor: '#403D39', borderColor: '#C1DDB9' }}>
+              <div className="space-y-4 text-base font-serif max-h-60 overflow-y-auto leading-relaxed" style={{ color: '#F2B5D4' }}>
                 <p>Hey everyone - I am Peter. I currently lead growth at Footprint, where we help fintechs, financial institutions, and marketplaces verify identity, prevent fraud, and vault sensitive information.</p>
                 
                 <p>I started my career in investment banking at GS, where I spent ~3 years on the TMT team. I left back in 2021 to start a company ALAO, which helped micro-celebrities invest in consumer brands. It was a blast; we made plenty of mistakes and learned a ton. In 2022, we sold the company to Commonwealth (for not a lot of money :)).</p>
