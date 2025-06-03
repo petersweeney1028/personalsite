@@ -1,0 +1,121 @@
+# 👋 About Me
+
+Hey everyone - I am Peter. I currently lead growth at Footprint, where we help fintechs, financial institutions and marketplaces verify identity, prevent fraud and vault sensitive information. 
+
+I started my career in investment banking at GS, where I spent ~3 years on the TMT team. I left back in 2021 to start a company ALAO, which helped micro-celebrities invest in consumer brands. It was a blast, we made plenty of mistakes and learned a ton. In 2022, we sold the company to Commonwealth (for not a lot of money :)). 
+
+I loved being a founder and fully intend to do it again. I joined Footprint as the first business hire in hopes to learn everything I can about building a generational company. 
+
+These days I spend most of my time working on Footprint, but also explore curiosities (stablecoins, manufacturing, construction, ingredient supply chain and agriculture), write a blog (as often as I can), and work on side projects. I share and keep track of all the above on this page. 
+
+I am always looking to meet cool and interesting people. If you want to chat, feel free to DM me on Twitter.
+
+# 🔍 Find Me Online
+
+[peter sweeney (@peter_sweeney0) on X](https://x.com/peter_sweeney0)
+
+[petersweeney1028 - Overview](https://github.com/petersweeney1028)
+
+[www.linkedin.com](https://www.linkedin.com/in/peter-sweeney-a78b85b9/)
+
+# ✍️ Blog
+
+https://medium.com/@peter_sweeney/sports-talk-radio-the-best-community-building-medium-84e21b9dfb82
+
+https://medium.com/@peter_sweeney/why-the-f-ck-cant-i-get-sabrina-carpenter-out-of-my-head-658117112ae3
+
+https://medium.com/@peter_sweeney/the-erosion-and-rediscovery-of-personal-style-in-the-age-of-ai-229bbe242b35
+
+https://medium.com/@peter_sweeney/i-am-looking-for-adventures-079b68e59b88
+
+https://medium.com/@peter_sweeney/how-to-be-more-productive-dc8ada8a3fb3
+
+https://medium.com/@peter_sweeney/interesting-things-to-build-in-the-future-part-3-future-of-content-2e536eed6321
+
+https://medium.com/@peter_sweeney/interesting-things-to-build-in-the-future-part-2-longing-for-belonging-f816322ebd61
+
+https://medium.com/@peter_sweeney/interesting-things-to-build-in-the-future-45a8ca6f1c0e
+
+https://medium.com/@peter_sweeney/the-minions-ai-nfts-and-the-future-of-fanfiction-fca56658efbf
+
+https://medium.com/@peter_sweeney/reflections-after-shutting-down-my-first-startup-b5cc70e0b39b
+
+https://medium.com/@peter_sweeney/whats-cooler-than-being-cool-51ee0ad7e4a1
+
+https://medium.com/@peter_sweeney/how-the-internet-can-create-your-dream-job-34f4dd1b6422
+
+https://medium.com/@peter_sweeney/ftx-alao-and-the-ownership-of-culture-25b1fb1bf09d
+
+https://medium.com/@peter_sweeney/the-power-of-ownership-11e0b6dd76b2
+
+# 🚀 Side Projects
+
+- Night Routine
+    
+    Working with a friend on an app to help people set and stick to a nightly routine to optimize their sleep. You can check the app out on the app store [here](https://apps.apple.com/sa/app/night-routine/id6740878360). 
+    
+- Chrome Plugin to Summarize Articles
+    - I am a big Instapaper user, which really means I store articles in there and never read them. I want to build a similar chrome plugin but one that sends you a summary of all the articles you saved once a week.
+    - I am currently building it with the help of GPT and plenty of YouTube videos. I’ll likely include updates on my blog and you can follow along on my GitHub.
+    - Here is the latest update. We have it working a bit! Hoping to make more progress this week.
+        
+        https://www.loom.com/share/c4d912fa335a43c58d632e36bb3d8033?sid=5ad9ffa7-af94-437e-bad5-c21cee94dfd3
+        
+    - I need a privacy policy for the extension, so here it is:
+    
+    [Privacy Policy](https://www.notion.so/Privacy-Policy-ae42d3dd0a5247039f4af20849f659b6?pvs=21)
+    
+- Taylor Swift Newsletter
+    - In January/February 2023, I built an AI automated Taylor Swift newsletter. Every day at 5pm EDT a webscraper would pull out the top 10 google news stories on Taylor, feed the body content to GPT, which would summarize it in a millennial voice. I used sklearn and used a TF-IDF matrix to calculate the cosine similarity between the article summaries. It would then be formatted to an HTML template and Sendgrid would auto send the emails.
+    - It was fun to build but two weeks after pushing it, Google News changed their HTML content, which broke the scraper. I had a total of 11 subscribers at the time and decided against fixing it.
+    - You can still check out the code on my Github and this was one of my favorite editions.
+    
+    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/1021f016-808f-44c2-93e4-95d0b2f18813/b3ecdb22-b2dc-41ff-9545-a30312854a97/Untitled.png)
+    
+- Valentine’s Day Anonymous Message
+    - For Valentine’s Day, I thought it would be fun to build something for college students to anonymously message their crush.
+    - I spun up a SquareSpace website quickly called Screw Cupid, Just Text. You could go on and fill out a form to text your crush anonymously.
+    - We built this super fast and didn’t want to pay much so the backend was super janky. We used Zapier to load form submissions to google sheets and then sent texts individually because Twilio requires some verification we didn’t want to do.
+    - Each text contained a unique link that showed the receiver a hint of who sent it, they could then choose to pay $1 to reveal the sender.
+    - We made $4 lol.
+    
+    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/1021f016-808f-44c2-93e4-95d0b2f18813/b13a29e1-8b99-49aa-ac54-f979bf9fbd3d/Untitled.jpeg)
+    
+- Building 3D Printer
+    - I am currently building a 3D printer. As I mentioned in my blog, I have become intrigued by the reindustrialize movement but have very limited experience ever building things with my hands.
+    - I decided that I would build an underwater drone to hopefully get my hands dirty and learn something. I bought the underwater drone kit and it turns out you need a 3D printer to build it.
+    - I did some research online and saw that plenty of people assemble their own 3D printer, so I bought the ****[Prusa i3 MK3S+ kit assembly](https://help.prusa3d.com/category/original-prusa-i3-mk3s-kit-assembly_1128) and am working my way through that right now.
+    - The printer is working! Took a longer than I would like to admit but we are live. Hit me up for all your 3d printer needs
+        - https://x.com/peter_sweeney0/status/1836571857480204436
+
+# 🤷 Fun Stuff
+
+I wanted a section where I could just dump fun random thoughts and facts about me. They will likely be accompanied by pictures. 
+
+1. I am a big fan of surfing, but not very good at it. 
+    
+    ![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/1021f016-808f-44c2-93e4-95d0b2f18813/00d799d7-4810-4788-b680-73f641440575/Untitled.jpeg)
+    
+2. Better at snowboarding, but sadly do not find as much time to go as I would like to. 
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/1021f016-808f-44c2-93e4-95d0b2f18813/0f065c11-6352-491e-9627-0ec39ae5483b/Untitled.jpeg)
+
+1. My girlfriend and I have recently been playing more tennis, which we have fallen in love with. 
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/1021f016-808f-44c2-93e4-95d0b2f18813/f8fb58f3-0985-4c9b-bd6f-fd4b3b09c0d0/Untitled.jpeg)
+
+1. And like most New Yorkers, I like to go eat good food with my friends. I went to Penn and am lucky that a lot of close friends from college also ended up in NYC. 
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/1021f016-808f-44c2-93e4-95d0b2f18813/910db9c1-5bee-4514-8917-85e85d58b5ca/Untitled.jpeg)
+
+1. I love BBQ food
+
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/1021f016-808f-44c2-93e4-95d0b2f18813/47753477-06c2-4d0f-8dfd-a439d5719418/Untitled.jpeg)
+
+# 📚 Reading
+
+- Coming soon
+
+# 👣 Footprint
+
+Working at Footprint has been amazing. The team that Eli and Alex have put together is top notch. Check out our website [here](https://www.notion.so/Loneliness-Lack-of-community-ab0c47c7c8134b61ac6493d72aa16c67?pvs=21) and some media links below.

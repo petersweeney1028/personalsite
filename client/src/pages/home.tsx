@@ -39,40 +39,36 @@ const photos = [
 ];
 
 const socialLinks = [
-  { name: "Twitter", icon: "🐦", url: "https://twitter.com" },
-  { name: "LinkedIn", icon: "💼", url: "https://linkedin.com" },
-  { name: "Newsletter", icon: "📧", url: "mailto:hello@example.com" },
+  { name: "Twitter", icon: "🐦", url: "https://x.com/peter_sweeney0" },
+  { name: "LinkedIn", icon: "💼", url: "https://www.linkedin.com/in/peter-sweeney-a78b85b9/" },
+  { name: "GitHub", icon: "💻", url: "https://github.com/petersweeney1028" },
+  { name: "Medium", icon: "📝", url: "https://medium.com/@peter_sweeney" },
   { name: "Spotify", icon: "🎵", url: "https://open.spotify.com/user/312jm37lavwanfdvn5rbam2olzym" },
-  { name: "Blog", icon: "📚", url: "https://blog.example.com" },
-  { name: "Portfolio", icon: "🎨", url: "https://portfolio.example.com" },
-  { name: "Discord", icon: "💬", url: "https://discord.com" },
-  { name: "Instagram", icon: "📱", url: "https://instagram.com" }
+  { name: "Footprint", icon: "🔒", url: "https://www.onefootprint.com" },
+  { name: "Night Routine", icon: "🌙", url: "https://apps.apple.com/sa/app/night-routine/id6740878360" },
+  { name: "Email", icon: "📧", url: "mailto:hello@petersweeney.com" }
 ];
 
 const projects = [
   {
-    title: "Building Cool Web Stuff",
-    description: "Working on some awesome web projects that blend retro aesthetics with modern functionality. It's like bringing the best of both worlds together!",
-    tags: ["HTML/CSS", "JavaScript"],
-    gradient: "from-purple-600 to-pink-500"
+    title: "Night Routine App",
+    description: "Working with a friend on an app to help people set and stick to a nightly routine to optimize their sleep. Available on the App Store.",
+    tags: ["iOS", "Sleep Tech"]
   },
   {
-    title: "Learning New Tech",
-    description: "Always exploring the latest in web development while keeping that nostalgic flair alive. Currently diving deep into modern frameworks!",
-    tags: ["React", "Node.js"],
-    gradient: "from-green-500 to-blue-500"
+    title: "Chrome Article Summarizer",
+    description: "Building a chrome extension that summarizes saved articles using GPT. Because who actually reads all those Instapaper articles?",
+    tags: ["Chrome Extension", "AI"]
   },
   {
-    title: "Creative Projects",
-    description: "Experimenting with digital art, music, and interactive experiences. The early 2000s were all about self-expression!",
-    tags: ["Art", "Music"],
-    gradient: "from-orange-500 to-red-500"
+    title: "3D Printer Build",
+    description: "Currently assembling a Prusa i3 MK3S+ kit. Part of my journey into the reindustrialization movement and getting my hands dirty with hardware.",
+    tags: ["Hardware", "3D Printing"]
   },
   {
-    title: "Community Building",
-    description: "Connecting with fellow web enthusiasts and sharing the love for retro internet culture. Let's bring back the fun web!",
-    tags: ["Networking", "Sharing"],
-    gradient: "from-cyan-500 to-purple-500"
+    title: "Blog Writing",
+    description: "Writing about tech, culture, and startups on Medium. Covering everything from AI and NFTs to the future of content and community building.",
+    tags: ["Writing", "Medium"]
   }
 ];
 
@@ -91,7 +87,7 @@ export default function Home() {
         <section className="retro-container p-8 mb-8 text-center">
           <div className="mb-6">
             <div className="inline-block bg-yellow-300 text-black font-comic text-2xl px-6 py-3 border-2 border-black animate-blink font-bold">
-              ★ WELCOME TO MY HOMEPAGE ★
+              ★ PETER'S DIGITAL SPACE ★
             </div>
           </div>
           
@@ -111,14 +107,13 @@ export default function Home() {
             
             <div className="text-left max-w-2xl">
               <p className="font-verdana text-lg mb-4 leading-relaxed text-black">
-                Hey! I'm Peter, and welcome to my homepage! 
-                This site is like my digital diary from the golden age of the web. 
-                I'm passionate about technology, creativity, and making cool websites!
+                Hey everyone - I'm Peter. I currently lead growth at Footprint, where we help fintechs and financial institutions verify identity and prevent fraud. 
+                Former investment banker at Goldman Sachs, ex-founder of ALAO. I love building things and exploring new tech.
               </p>
               <div className="flex gap-4 justify-center md:justify-start flex-wrap">
-                <span className="bg-red-500 text-white px-3 py-1 border-2 border-black font-comic">Web Designer</span>
-                <span className="bg-blue-500 text-white px-3 py-1 border-2 border-black font-comic">Creator</span>
-                <span className="bg-green-500 text-white px-3 py-1 border-2 border-black font-comic">Dreamer</span>
+                <span className="bg-red-500 text-white px-3 py-1 border-2 border-black font-comic">Growth Lead</span>
+                <span className="bg-blue-500 text-white px-3 py-1 border-2 border-black font-comic">Ex-Founder</span>
+                <span className="bg-green-500 text-white px-3 py-1 border-2 border-black font-comic">Builder</span>
               </div>
             </div>
           </div>
@@ -127,7 +122,7 @@ export default function Home() {
         {/* What I'm Up To Section */}
         <section className="retro-container p-8 mb-8">
           <h2 className="font-comic text-4xl text-purple-800 mb-6 text-center">
-            What I'm Up To Right Now
+            Current Projects & Side Hustles
           </h2>
           
           <div className="grid md:grid-cols-2 gap-6">
@@ -150,9 +145,9 @@ export default function Home() {
         {/* Photo Zone */}
         <section className="retro-container p-8 mb-8">
           <h2 className="font-comic text-4xl text-red-800 mb-6 text-center">
-            My Photo Zone
+            Fun Stuff & Adventures
           </h2>
-          <p className="text-center mb-8 font-verdana text-black">Random pics from my adventures and things I love!</p>
+          <p className="text-center mb-8 font-verdana text-black">Surfing, snowboarding, tennis, good food with friends, and BBQ!</p>
           
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-items-center">
             {photos.map((photo, index) => (
@@ -213,10 +208,10 @@ export default function Home() {
         {/* Footer */}
         <footer className="text-center py-8">
           <div className="font-comic text-blue-800 mb-4">
-            Made with love in the spirit of the early web
+            Always looking to meet cool and interesting people
           </div>
           <div className="font-verdana text-xs text-black">
-            © 2024 Peter's Homepage • Best viewed with Internet Explorer 6.0
+            © 2024 Peter Sweeney • DM me on Twitter if you want to chat
           </div>
           <div className="mt-4 animate-bounce cursor-pointer" onClick={scrollToTop}>
             <span className="text-2xl">⬆️</span>
