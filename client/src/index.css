@@ -14,10 +14,10 @@
   --popover-foreground: 20 14.3% 4.1%;
   --card: 0 0% 100%;
   --card-foreground: 20 14.3% 4.1%;
-  --border: 20 5.9% 90%;
+  --border: 103 35% 81%; /* Tea green for borders */
   --input: 20 5.9% 90%;
-  --primary: 103 35% 81%;
-  --primary-foreground: 0 0% 0%;
+  --primary: 103 35% 81%; /* Tea green */
+  --primary-foreground: 82 12% 25%; /* Black olive for text */
   --secondary: 60 4.8% 95.9%;
   --secondary-foreground: 24 9.8% 10%;
   --accent: 60 4.8% 95.9%;
@@ -27,13 +27,12 @@
   --ring: 20 14.3% 4.1%;
   --radius: 0.5rem;
   
-  /* Early 2000s authentic colors */
-  --classic-blue: 240 100% 50%; /* #0000FF */
-  --classic-red: 0 100% 50%; /* #FF0000 */
-  --classic-green: 120 100% 25%; /* #008000 */
-  --classic-purple: 300 100% 25%; /* #800080 */
-  --classic-gray: 0 0% 75%; /* #C0C0C0 */
-  --classic-navy: 240 100% 25%; /* #000080 */
+  /* New color palette */
+  --tea-green: 103 35% 81%; /* #C1DDB9 */
+  --sunset: 34 100% 76%; /* #FFC684 */
+  --lavender-pink: 321 38% 74%; /* #F2B5D4 */
+  --black-olive: 82 12% 25%; /* #403D39 */
+  --dark-green: 170 100% 11%; /* #062726 */
 }
 
 .dark {
@@ -264,38 +263,38 @@
   font-weight: 500;
 }
 
-/* 70s-inspired taskbar */
+/* 70s-inspired taskbar with new colors */
 .taskbar {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
   height: 40px;
-  background: linear-gradient(to bottom, #8B4513, #A0522D);
-  border-top: 2px solid #D2691E;
+  background: linear-gradient(to bottom, #403D39, #062726);
+  border-top: 2px solid #C1DDB9;
   display: flex;
   align-items: center;
   padding: 0 12px;
   z-index: 1000;
-  box-shadow: 0 -2px 8px rgba(139, 69, 19, 0.3);
+  box-shadow: 0 -2px 8px rgba(64, 61, 57, 0.3);
 }
 
 .start-button {
-  background: linear-gradient(to bottom, #D2691E, #CD853F);
-  border: 2px outset #D2691E;
+  background: linear-gradient(to bottom, #FFC684, #F2B5D4);
+  border: 2px outset #C1DDB9;
   border-radius: 6px;
   padding: 6px 16px;
   font-family: 'Georgia', serif;
   font-size: 12px;
   font-weight: bold;
-  color: #F5E6D3;
+  color: #403D39;
   cursor: pointer;
   margin-right: 12px;
-  text-shadow: 1px 1px 2px rgba(139, 69, 19, 0.5);
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
 }
 
 .start-button:active {
-  border: 2px inset #D2691E;
+  border: 2px inset #C1DDB9;
 }
 
 .taskbar-time {
@@ -309,26 +308,27 @@
   color: #5D4037;
 }
 
-/* Additional 70s styling */
+/* Additional 70s styling with new palette */
 .retro-button {
-  background: linear-gradient(to bottom, #c1ddb9, #a8c898);
-  border: 2px outset #c1ddb9;
+  background: linear-gradient(to bottom, #FFC684, #F2B5D4);
+  border: 2px outset #C1DDB9;
   border-radius: 4px;
   padding: 8px 16px;
   font-family: 'Georgia', serif;
   font-size: 12px;
-  color: #2d4a22;
+  color: #403D39;
   cursor: pointer;
-  text-shadow: 1px 1px 2px rgba(45, 74, 34, 0.3);
+  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
   transition: all 0.2s ease;
 }
 
 .retro-button:hover {
-  background: linear-gradient(to bottom, #a8c898, #c1ddb9);
+  background: linear-gradient(to bottom, #F2B5D4, #FFC684);
+  border-color: #062726;
 }
 
 .retro-button:active {
-  border: 2px inset #c1ddb9;
+  border: 2px inset #C1DDB9;
 }
 
 /* Lightbox styling */

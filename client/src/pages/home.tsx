@@ -380,20 +380,21 @@ export default function Home() {
           zIndex={windowZIndices.work || 100}
           onFocus={() => bringToFront('work')}
         >
-          <div className="p-6 bg-gradient-to-b from-orange-50 to-orange-100 h-full">
+          <div className="p-6 h-full" style={{ background: 'linear-gradient(to bottom, #FFC684, #F2B5D4)' }}>
             <div className="flex items-start gap-6 mb-6">
               <img 
                 src={peterHeadshot} 
                 alt="Peter Sweeney" 
-                className="w-24 h-24 border-3 border-orange-300 rounded-lg shadow-lg object-cover"
+                className="w-24 h-24 border-3 rounded-lg shadow-lg object-cover" 
+                style={{ borderColor: '#C1DDB9' }}
               />
               <div>
-                <h3 className="font-bold text-2xl mb-3 font-serif" style={{ color: '#8B4513' }}>Peter Sweeney</h3>
+                <h3 className="font-bold text-2xl mb-3 font-serif" style={{ color: '#403D39' }}>Peter Sweeney</h3>
               </div>
             </div>
             
-            <div className="bg-white rounded-lg border-2 border-orange-200 p-5 shadow-md">
-              <div className="space-y-4 text-base font-serif max-h-60 overflow-y-auto leading-relaxed" style={{ color: '#5D4037' }}>
+            <div className="bg-white rounded-lg border-2 p-5 shadow-md" style={{ borderColor: '#C1DDB9' }}>
+              <div className="space-y-4 text-base font-serif max-h-60 overflow-y-auto leading-relaxed" style={{ color: '#403D39' }}>
                 <p>Hey everyone - I am Peter. I currently lead growth at Footprint, where we help fintechs, financial institutions, and marketplaces verify identity, prevent fraud, and vault sensitive information.</p>
                 
                 <p>I started my career in investment banking at GS, where I spent ~3 years on the TMT team. I left back in 2021 to start a company ALAO, which helped micro-celebrities invest in consumer brands. It was a blast; we made plenty of mistakes and learned a ton. In 2022, we sold the company to Commonwealth (for not a lot of money :)).</p>
