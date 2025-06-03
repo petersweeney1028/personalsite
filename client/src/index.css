@@ -135,17 +135,11 @@
 
 /* 70s-inspired desktop background */
 .desktop-bg {
-  background: linear-gradient(45deg, #D17A4A 0%, #E8935B 25%, #F4B462 50%, #E8935B 75%, #D17A4A 100%);
-  background-size: 400% 400%;
-  animation: subtle-shift 20s ease-in-out infinite;
+  background: url('/src/assets/retro-background.png') no-repeat center center fixed;
+  background-size: cover;
   min-height: 100vh;
   position: relative;
   overflow: hidden;
-}
-
-@keyframes subtle-shift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
 }
 
 /* Sparkle effects */
