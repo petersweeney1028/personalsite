@@ -461,8 +461,8 @@ export default function Home() {
         onPrev={prevImage}
       />
 
-      {/* Taskbar */}
-      <Taskbar />
+      {/* Taskbar - Hidden */}
+      {/* <Taskbar /> */}
     </div>
   );
 }
