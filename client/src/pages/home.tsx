@@ -236,6 +236,8 @@ export default function Home() {
           initialPosition={{ x: 200, y: 100 }}
           width={450}
           height={400}
+          zIndex={windowZIndices.spotify || 100}
+          onFocus={() => bringToFront('spotify')}
         >
           <div className="p-4">
             <p className="text-sm mb-4 font-serif">Now playing from my Liked Songs collection</p>
@@ -268,6 +270,8 @@ export default function Home() {
           initialPosition={{ x: 300, y: 150 }}
           width={500}
           height={400}
+          zIndex={windowZIndices.inspiration || 100}
+          onFocus={() => bringToFront('inspiration')}
         >
           <div className="p-4">
             <p className="text-sm mb-4 font-serif">Vintage tennis, 70s interiors, and sun-faded aesthetics</p>
@@ -300,6 +304,8 @@ export default function Home() {
           initialPosition={{ x: 250, y: 200 }}
           width={450}
           height={350}
+          zIndex={windowZIndices.writing || 100}
+          onFocus={() => bringToFront('writing')}
         >
           <div className="p-4">
             <h3 className="font-bold mb-3 font-serif" style={{ color: '#8B4513' }}>My Blog Posts</h3>
@@ -331,6 +337,8 @@ export default function Home() {
           initialPosition={{ x: 400, y: 100 }}
           width={450}
           height={500}
+          zIndex={windowZIndices.reading || 100}
+          onFocus={() => bringToFront('reading')}
         >
           <div className="p-4">
             <h3 className="font-bold mb-3 font-serif" style={{ color: '#8B4513' }}>Books & Notes</h3>
@@ -368,6 +376,8 @@ export default function Home() {
           initialPosition={{ x: 350, y: 250 }}
           width={550}
           height={450}
+          zIndex={windowZIndices.work || 100}
+          onFocus={() => bringToFront('work')}
         >
           <div className="p-6 bg-gradient-to-b from-orange-50 to-orange-100 h-full">
             <div className="flex items-start gap-6 mb-6">
@@ -428,6 +438,8 @@ export default function Home() {
           initialPosition={{ x: 150, y: 50 }}
           width={500}
           height={600}
+          zIndex={windowZIndices.guestbook || 100}
+          onFocus={() => bringToFront('guestbook')}
         >
           <div style={{ padding: '8px' }}>
             <Guestbook />

@@ -4,9 +4,11 @@ import { DesktopWindow } from './desktop-window';
 interface ClockWeatherWindowProps {
   isOpen: boolean;
   onClose: () => void;
+  zIndex?: number;
+  onFocus?: () => void;
 }
 
-export function ClockWeatherWindow({ isOpen, onClose }: ClockWeatherWindowProps) {
+export function ClockWeatherWindow({ isOpen, onClose, zIndex, onFocus }: ClockWeatherWindowProps) {
   const [time, setTime] = useState(new Date());
   const [weather, setWeather] = useState({
     temperature: '--',
@@ -68,6 +70,8 @@ export function ClockWeatherWindow({ isOpen, onClose }: ClockWeatherWindowProps)
       initialPosition={{ x: window.innerWidth - 300, y: 20 }}
       width={280}
       height={160}
+      zIndex={zIndex}
+      onFocus={onFocus}
     >
       <div className="text-center p-2">
         <div className="mb-2">
