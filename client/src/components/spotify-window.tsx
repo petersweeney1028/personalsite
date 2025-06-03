@@ -34,11 +34,12 @@ export function SpotifyWindow({ isOpen, onClose }: SpotifyWindowProps) {
           {!embedError ? (
             <iframe
               style={{ borderRadius: '12px', width: '100%', height: '100%', border: 'none' }}
-              src="https://open.spotify.com/embed/playlist/505yqRro56pe4jNE9Scrgj?utm_source=generator"
+              src="https://open.spotify.com/embed/playlist/505yqRro56pe4jNE9Scrgj?utm_source=generator&theme=0"
+              frameBorder="0"
+              allowTransparency={true}
               allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
               loading="lazy"
               title="Spotify Playlist"
-              onError={() => setEmbedError(true)}
             />
           ) : (
             <div className="flex flex-col items-center justify-center h-full text-center p-4">
