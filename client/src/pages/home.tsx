@@ -146,7 +146,7 @@ const projects = [
 ];
 
 export default function Home() {
-  const [openWindows, setOpenWindows] = useState<string[]>(['clock']);
+  const [openWindows, setOpenWindows] = useState<string[]>(['clock', 'spotify']);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
 
