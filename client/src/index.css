@@ -16,8 +16,8 @@
   --card-foreground: 20 14.3% 4.1%;
   --border: 20 5.9% 90%;
   --input: 20 5.9% 90%;
-  --primary: 207 90% 54%;
-  --primary-foreground: 211 100% 99%;
+  --primary: 103 35% 81%;
+  --primary-foreground: 0 0% 0%;
   --secondary: 60 4.8% 95.9%;
   --secondary-foreground: 24 9.8% 10%;
   --accent: 60 4.8% 95.9%;
@@ -47,8 +47,8 @@
   --card-foreground: 0 0% 98%;
   --border: 240 3.7% 15.9%;
   --input: 240 3.7% 15.9%;
-  --primary: 207 90% 54%;
-  --primary-foreground: 211 100% 99%;
+  --primary: 103 35% 81%;
+  --primary-foreground: 0 0% 0%;
   --secondary: 240 3.7% 15.9%;
   --secondary-foreground: 0 0% 98%;
   --accent: 240 3.7% 15.9%;
@@ -193,9 +193,9 @@
 /* 70s-inspired window styling */
 .desktop-window {
   background: #F5E6D3;
-  border: 3px solid #8B4513;
+  border: 3px solid #c1ddb9;
   border-radius: 8px;
-  box-shadow: 4px 4px 12px rgba(139, 69, 19, 0.4);
+  box-shadow: 4px 4px 12px rgba(193, 221, 185, 0.4);
   position: absolute;
   min-width: 300px;
   min-height: 200px;
@@ -203,8 +203,8 @@
 }
 
 .window-titlebar {
-  background: linear-gradient(to right, #D2691E, #CD853F);
-  color: #F5E6D3;
+  background: linear-gradient(to right, #c1ddb9, #a8c898);
+  color: #2d4a22;
   padding: 8px 12px;
   font-family: 'Georgia', serif;
   font-size: 13px;
@@ -214,7 +214,7 @@
   align-items: center;
   cursor: move;
   border-radius: 5px 5px 0 0;
-  text-shadow: 1px 1px 2px rgba(139, 69, 19, 0.5);
+  text-shadow: 1px 1px 2px rgba(45, 74, 34, 0.3);
 }
 
 .window-content {
@@ -241,14 +241,14 @@
 }
 
 .desktop-icon:hover {
-  background: rgba(245, 230, 211, 0.3);
-  border: 2px solid #8B4513;
+  background: rgba(193, 221, 185, 0.3);
+  border: 2px solid #c1ddb9;
   transform: scale(1.05);
 }
 
 .desktop-icon.selected {
-  background: rgba(245, 230, 211, 0.5);
-  border: 2px solid #D2691E;
+  background: rgba(193, 221, 185, 0.5);
+  border: 2px solid #c1ddb9;
 }
 
 .desktop-icon .icon-emoji {
@@ -311,24 +311,24 @@
 
 /* Additional 70s styling */
 .retro-button {
-  background: linear-gradient(to bottom, #D2691E, #CD853F);
-  border: 2px outset #D2691E;
+  background: linear-gradient(to bottom, #c1ddb9, #a8c898);
+  border: 2px outset #c1ddb9;
   border-radius: 4px;
   padding: 8px 16px;
   font-family: 'Georgia', serif;
   font-size: 12px;
-  color: #F5E6D3;
+  color: #2d4a22;
   cursor: pointer;
-  text-shadow: 1px 1px 2px rgba(139, 69, 19, 0.5);
+  text-shadow: 1px 1px 2px rgba(45, 74, 34, 0.3);
   transition: all 0.2s ease;
 }
 
 .retro-button:hover {
-  background: linear-gradient(to bottom, #CD853F, #D2691E);
+  background: linear-gradient(to bottom, #a8c898, #c1ddb9);
 }
 
 .retro-button:active {
-  border: 2px inset #D2691E;
+  border: 2px inset #c1ddb9;
 }
 
 /* Lightbox styling */
