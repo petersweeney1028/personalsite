@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { DesktopWindow } from './desktop-window';
 
 interface ClockWeatherWindowProps {
   isOpen: boolean;
@@ -60,45 +61,36 @@ export function ClockWeatherWindow({ isOpen, onClose }: ClockWeatherWindowProps)
   });
 
   return (
-    <div className="desktop-window" style={{ 
-      position: 'absolute', 
-      top: 20, 
-      right: 20, 
-      width: 280, 
-      height: 200,
-      zIndex: 100 
-    }}>
-      <div className="window-titlebar">
-        <span>🕒 Clock & Weather</span>
-        <button 
-          className="w-6 h-6 bg-red-600 text-white border border-red-800 text-xs"
-          onClick={onClose}
-        >
-          ×
-        </button>
-      </div>
-      <div className="window-content text-center">
-        <div className="mb-4">
-          <div className="text-2xl font-bold text-brown-800" style={{ color: '#8B4513' }}>
+    <DesktopWindow
+      title="🕒 Clock & Weather"
+      isOpen={isOpen}
+      onClose={onClose}
+      initialPosition={{ x: window.innerWidth - 300, y: 20 }}
+      width={280}
+      height={160}
+    >
+      <div className="text-center p-2">
+        <div className="mb-2">
+          <div className="text-xl font-bold" style={{ color: '#8B4513' }}>
             {timeStr}
           </div>
-          <div className="text-sm text-gray-600">
+          <div className="text-xs text-gray-600 leading-tight">
             {dateStr}
           </div>
         </div>
         
-        <div className="border-t-2 border-brown-400 pt-3" style={{ borderColor: '#CD853F' }}>
-          <div className="text-lg font-semibold" style={{ color: '#D2691E' }}>
+        <div className="border-t border-gray-300 pt-2">
+          <div className="text-base font-semibold" style={{ color: '#c1ddb9' }}>
             {weather.temperature}
           </div>
-          <div className="text-sm text-gray-700">
+          <div className="text-xs text-gray-700 leading-tight">
             {weather.condition}
           </div>
-          <div className="text-xs text-gray-500 mt-1">
+          <div className="text-xs text-gray-500">
             {weather.location}
           </div>
         </div>
       </div>
-    </div>
+    </DesktopWindow>
   );
 }
