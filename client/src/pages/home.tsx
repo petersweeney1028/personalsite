@@ -382,9 +382,9 @@ export default function Home() {
           <div className="p-6 bg-gradient-to-b from-orange-50 to-orange-100 h-full">
             <div className="flex items-start gap-6 mb-6">
               <img 
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=120&h=120" 
+                src="/attached_assets/Peter-Headshot.webp" 
                 alt="Peter Sweeney" 
-                className="w-24 h-24 border-3 border-orange-300 rounded-lg shadow-lg"
+                className="w-24 h-24 border-3 border-orange-300 rounded-lg shadow-lg object-cover"
               />
               <div>
                 <h3 className="font-bold text-2xl mb-3 font-serif" style={{ color: '#8B4513' }}>Peter Sweeney</h3>
