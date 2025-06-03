@@ -2,40 +2,80 @@ import { useState } from 'react';
 import { DesktopWindow } from "@/components/desktop-window";
 import { DesktopIcon } from "@/components/desktop-icon";
 import { Taskbar } from "@/components/taskbar";
-import { PolaroidPhoto } from "@/components/polaroid-photo";
-import { MySpaceButton } from "@/components/myspace-button";
+import { SpotifyWindow } from "@/components/spotify-window";
+import { ClockWeatherWindow } from "@/components/clock-weather-window";
+import { ImageLightbox } from "@/components/image-lightbox";
 import { Guestbook } from "@/components/guestbook";
 
-const photos = [
+const inspirationImages = [
   {
-    src: "https://images.unsplash.com/photo-1551033406-611cf9a28f67?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200",
-    alt: "Retro computer setup",
-    caption: "My setup! 💻"
+    src: "https://images.unsplash.com/photo-1554941426-e6312d7d6054?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
+    alt: "Tennis court with warm light",
+    caption: "Vintage tennis courts capture that perfect summer light"
   },
   {
-    src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200",
+    src: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
+    alt: "70s interior design",
+    caption: "Warm earth tones and organic shapes from the 70s"
+  },
+  {
+    src: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
+    alt: "Sunset over tennis court",
+    caption: "Sun-faded textures and golden hour nostalgia"
+  },
+  {
+    src: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
+    alt: "Retro poolside scene",
+    caption: "Poolsuite-inspired summer vibes"
+  },
+  {
+    src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
     alt: "Vintage polaroid photos",
-    caption: "Memories 📸"
+    caption: "Analog memories and instant photography"
   },
   {
-    src: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200",
-    alt: "Retro boombox",
-    caption: "The beats! 🎵"
+    src: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
+    alt: "Retro radio",
+    caption: "Vintage audio equipment and warm tones"
+  }
+];
+
+const books = [
+  {
+    title: "Sapiens",
+    author: "Yuval Noah Harari",
+    cover: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=300",
+    notes: "Fascinating perspective on human history and evolution"
   },
   {
-    src: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200",
-    alt: "Retro arcade games",
-    caption: "Game time! 🕹️"
+    title: "The Power Broker",
+    author: "Robert Caro",
+    cover: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=300",
+    notes: "Epic biography of Robert Moses and power in America"
   },
   {
-    src: "https://images.unsplash.com/photo-1556075798-4825dfaaf498?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200",
-    alt: "Retro CRT television",
-    caption: "Old school TV 📺"
+    title: "Zero to One",
+    author: "Peter Thiel",
+    cover: "https://images.unsplash.com/photo-1592496431122-2349e0fbc666?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=300",
+    notes: "Essential reading for anyone building startups"
   },
   {
-    src: "https://images.unsplash.com/photo-1487014679447-9f8336841d58?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=200",
-    alt: "Early web design",
-    caption: "Web vibes! 🌐"
+    title: "The Subtle Art of Not Giving a F*ck",
+    author: "Mark Manson",
+    cover: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=300",
+    notes: "Counterintuitive approach to living a good life"
+  },
+  {
+    title: "Atomic Habits",
+    author: "James Clear",
+    cover: "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=300",
+    notes: "Practical framework for building good habits"
+  },
+  {
+    title: "The Mom Test",
+    author: "Rob Fitzpatrick",
+    cover: "https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=300",
+    notes: "How to talk to customers and learn if your idea is good"
   }
 ];
 
@@ -74,7 +114,9 @@ const projects = [
 ];
 
 export default function Home() {
-  const [openWindows, setOpenWindows] = useState<string[]>([]);
+  const [openWindows, setOpenWindows] = useState<string[]>(['clock']);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
 
   const openWindow = (windowId: string) => {
     if (!openWindows.includes(windowId)) {
@@ -86,15 +128,26 @@ export default function Home() {
     setOpenWindows(openWindows.filter(id => id !== windowId));
   };
 
+  const openLightbox = (index: number) => {
+    setLightboxIndex(index);
+    setLightboxOpen(true);
+  };
+
+  const nextImage = () => {
+    setLightboxIndex((prev) => (prev + 1) % inspirationImages.length);
+  };
+
+  const prevImage = () => {
+    setLightboxIndex((prev) => (prev - 1 + inspirationImages.length) % inspirationImages.length);
+  };
+
   const desktopIcons = [
-    { id: 'about', icon: '👤', label: 'About Me', position: { x: 30, y: 30 } },
-    { id: 'projects', icon: '🛠️', label: 'Projects', position: { x: 30, y: 120 } },
-    { id: 'photos', icon: '📸', label: 'Photos', position: { x: 30, y: 210 } },
-    { id: 'music', icon: '🎵', label: 'Music', position: { x: 30, y: 300 } },
-    { id: 'links', icon: '🔗', label: 'Links', position: { x: 30, y: 390 } },
-    { id: 'guestbook', icon: '📝', label: 'Guestbook', position: { x: 30, y: 480 } },
-    { id: 'footprint', icon: '🔒', label: 'Footprint', position: { x: 120, y: 30 } },
-    { id: 'blog', icon: '📖', label: 'Blog', position: { x: 120, y: 120 } }
+    { id: 'spotify', icon: '🎵', label: 'Spotify', position: { x: 30, y: 30 } },
+    { id: 'inspiration', icon: '🖼️', label: 'Inspiration', position: { x: 30, y: 130 } },
+    { id: 'writing', icon: '✍️', label: 'Writing', position: { x: 30, y: 230 } },
+    { id: 'reading', icon: '📚', label: 'Reading', position: { x: 30, y: 330 } },
+    { id: 'work', icon: '💼', label: 'Work', position: { x: 30, y: 430 } },
+    { id: 'guestbook', icon: '📝', label: 'Guestbook', position: { x: 130, y: 30 } }
   ];
 
   return (
@@ -110,204 +163,238 @@ export default function Home() {
         />
       ))}
 
-      {/* Windows */}
-      <DesktopWindow
-        title="About Me - Peter Sweeney"
-        isOpen={openWindows.includes('about')}
-        onClose={() => closeWindow('about')}
-        initialPosition={{ x: 200, y: 100 }}
-        width={500}
-        height={400}
-      >
-        <div className="p-4">
-          <div className="flex items-start gap-4 mb-4">
-            <img 
-              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100" 
-              alt="Peter Sweeney" 
-              className="w-20 h-20 border-2 inset border-gray-400"
-            />
-            <div>
-              <h3 className="font-bold text-lg mb-2">Peter Sweeney</h3>
-              <p className="text-sm">
-                Growth Lead at Footprint • Ex-Goldman Sachs • Ex-Founder of ALAO
-              </p>
-            </div>
-          </div>
-          <p className="text-sm leading-relaxed">
-            Hey everyone - I'm Peter. I currently lead growth at Footprint, where we help fintechs 
-            and financial institutions verify identity and prevent fraud. Former investment banker 
-            at Goldman Sachs, ex-founder of ALAO. I love building things and exploring new tech.
-            Always looking to meet cool and interesting people.
-          </p>
-        </div>
-      </DesktopWindow>
+      {/* Clock & Weather Window (Auto-opens) */}
+      <ClockWeatherWindow
+        isOpen={openWindows.includes('clock')}
+        onClose={() => closeWindow('clock')}
+      />
 
-      <DesktopWindow
-        title="Current Projects"
-        isOpen={openWindows.includes('projects')}
-        onClose={() => closeWindow('projects')}
-        initialPosition={{ x: 250, y: 150 }}
-        width={600}
-        height={500}
-      >
-        <div className="p-4">
-          {projects.map((project, index) => (
-            <div key={index} className="mb-4 p-3 bg-white border-2 inset border-gray-400">
-              <h4 className="font-bold text-sm mb-1">{project.title}</h4>
-              <p className="text-xs mb-2">{project.description}</p>
-              <div className="flex gap-1 flex-wrap">
-                {project.tags.map((tag, tagIndex) => (
-                  <span key={tagIndex} className="bg-blue-800 text-white px-1 py-0.5 text-xs">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-      </DesktopWindow>
-
-      <DesktopWindow
-        title="Photo Gallery"
-        isOpen={openWindows.includes('photos')}
-        onClose={() => closeWindow('photos')}
-        initialPosition={{ x: 300, y: 200 }}
-        width={500}
-        height={400}
-      >
-        <div className="p-4">
-          <p className="text-sm mb-4">Surfing, snowboarding, tennis, good food with friends, and BBQ!</p>
-          <div className="grid grid-cols-3 gap-2">
-            {photos.map((photo, index) => (
-              <div key={index} className="polaroid" style={{ transform: 'none', margin: 0 }}>
-                <img 
-                  src={photo.src}
-                  alt={photo.alt}
-                  className="w-full h-20 object-cover"
-                />
-                <div className="text-center mt-1 text-xs font-comic text-black">
-                  {photo.caption}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </DesktopWindow>
-
-      <DesktopWindow
-        title="Spotify Music Player"
-        isOpen={openWindows.includes('music')}
-        onClose={() => closeWindow('music')}
-        initialPosition={{ x: 350, y: 100 }}
-        width={400}
-        height={350}
-      >
-        <div className="p-4">
-          <p className="text-sm mb-4">Check out my tunes on Spotify!</p>
-          <div className="bg-white border-2 inset border-gray-400 h-64">
-            <iframe 
-              src="https://open.spotify.com/embed/user/312jm37lavwanfdvn5rbam2olzym" 
-              width="100%" 
-              height="100%" 
-              frameBorder="0" 
-              allowTransparency={true}
-              allow="encrypted-media"
-              title="Spotify Player"
-            />
-          </div>
-        </div>
-      </DesktopWindow>
-
-      <DesktopWindow
-        title="My Links"
-        isOpen={openWindows.includes('links')}
-        onClose={() => closeWindow('links')}
-        initialPosition={{ x: 400, y: 150 }}
-        width={350}
-        height={300}
-      >
-        <div className="p-4">
-          <div className="grid grid-cols-2 gap-2">
-            {socialLinks.map((link, index) => (
-              <MySpaceButton 
-                key={index}
-                icon={link.icon}
-                text={link.name}
-                url={link.url}
+      {/* Spotify Window */}
+      {openWindows.includes('spotify') && (
+        <DesktopWindow
+          title="🎵 Spotify Player"
+          isOpen={true}
+          onClose={() => closeWindow('spotify')}
+          initialPosition={{ x: 200, y: 100 }}
+          width={450}
+          height={400}
+        >
+          <div className="p-4">
+            <p className="text-sm mb-4 font-serif">Now playing from my Liked Songs collection</p>
+            <div className="bg-white border-2 inset border-gray-400 h-64 rounded">
+              <iframe 
+                src="https://open.spotify.com/embed/user/312jm37lavwanfdvn5rbam2olzym" 
+                width="100%" 
+                height="100%" 
+                frameBorder="0" 
+                allowTransparency={true}
+                allow="encrypted-media"
+                title="Spotify Player"
+                style={{ borderRadius: '4px' }}
               />
-            ))}
-          </div>
-        </div>
-      </DesktopWindow>
-
-      <DesktopWindow
-        title="Guestbook"
-        isOpen={openWindows.includes('guestbook')}
-        onClose={() => closeWindow('guestbook')}
-        initialPosition={{ x: 150, y: 50 }}
-        width={500}
-        height={600}
-      >
-        <div className="p-2">
-          <Guestbook />
-        </div>
-      </DesktopWindow>
-
-      <DesktopWindow
-        title="Footprint - Identity Verification"
-        isOpen={openWindows.includes('footprint')}
-        onClose={() => closeWindow('footprint')}
-        initialPosition={{ x: 450, y: 200 }}
-        width={400}
-        height={300}
-      >
-        <div className="p-4">
-          <h3 className="font-bold mb-3">Footprint</h3>
-          <p className="text-sm mb-3">
-            I lead growth at Footprint, where we help fintechs, financial institutions 
-            and marketplaces verify identity, prevent fraud and vault sensitive information.
-          </p>
-          <button 
-            className="myspace-btn text-xs px-3 py-2"
-            onClick={() => window.open('https://www.onefootprint.com', '_blank')}
-          >
-            Visit Footprint →
-          </button>
-        </div>
-      </DesktopWindow>
-
-      <DesktopWindow
-        title="My Blog on Medium"
-        isOpen={openWindows.includes('blog')}
-        onClose={() => closeWindow('blog')}
-        initialPosition={{ x: 500, y: 250 }}
-        width={450}
-        height={350}
-      >
-        <div className="p-4">
-          <h3 className="font-bold mb-3">Recent Blog Posts</h3>
-          <div className="space-y-2 text-xs">
-            <div className="p-2 bg-white border border-gray-400">
-              <strong>Sports Talk Radio: The Best Community Building Medium</strong>
             </div>
-            <div className="p-2 bg-white border border-gray-400">
-              <strong>Why the F*ck Can't I Get Sabrina Carpenter Out of My Head?</strong>
-            </div>
-            <div className="p-2 bg-white border border-gray-400">
-              <strong>The Erosion and Rediscovery of Personal Style in the Age of AI</strong>
-            </div>
-            <div className="p-2 bg-white border border-gray-400">
-              <strong>I Am Looking for Adventures</strong>
+            <div className="mt-3 flex gap-2">
+              <button className="retro-button text-xs px-3 py-1">⏸️ Pause</button>
+              <button className="retro-button text-xs px-3 py-1">⏭️ Next</button>
             </div>
           </div>
-          <button 
-            className="myspace-btn text-xs px-3 py-2 mt-3"
-            onClick={() => window.open('https://medium.com/@peter_sweeney', '_blank')}
-          >
-            Read More on Medium →
-          </button>
-        </div>
-      </DesktopWindow>
+        </DesktopWindow>
+      )}
+
+      {/* Inspiration Window */}
+      {openWindows.includes('inspiration') && (
+        <DesktopWindow
+          title="🖼️ Visual Inspiration"
+          isOpen={true}
+          onClose={() => closeWindow('inspiration')}
+          initialPosition={{ x: 300, y: 150 }}
+          width={500}
+          height={400}
+        >
+          <div className="p-4">
+            <p className="text-sm mb-4 font-serif">Vintage tennis, 70s interiors, and sun-faded aesthetics</p>
+            <div className="grid grid-cols-3 gap-2">
+              {inspirationImages.map((image, index) => (
+                <div 
+                  key={index} 
+                  className="cursor-pointer hover:opacity-80 transition-opacity"
+                  onClick={() => openLightbox(index)}
+                >
+                  <img 
+                    src={image.src}
+                    alt={image.alt}
+                    className="w-full h-20 object-cover border-2 border-gray-400 rounded"
+                  />
+                </div>
+              ))}
+            </div>
+            <p className="text-xs text-gray-600 mt-3 font-serif">Click any image to view in full size</p>
+          </div>
+        </DesktopWindow>
+      )}
+
+      {/* Writing Window */}
+      {openWindows.includes('writing') && (
+        <DesktopWindow
+          title="✍️ My Writing"
+          isOpen={true}
+          onClose={() => closeWindow('writing')}
+          initialPosition={{ x: 250, y: 200 }}
+          width={450}
+          height={350}
+        >
+          <div className="p-4">
+            <h3 className="font-bold mb-3 font-serif" style={{ color: '#8B4513' }}>Recent Blog Posts</h3>
+            <div className="space-y-2 text-sm">
+              <div className="p-3 bg-white border border-gray-400 rounded cursor-pointer hover:bg-gray-50">
+                <a href="https://medium.com/@peter_sweeney/sports-talk-radio-the-best-community-building-medium-84e21b9dfb82" target="_blank" rel="noopener noreferrer" className="text-decoration-none">
+                  <strong>Sports Talk Radio: The Best Community Building Medium</strong>
+                </a>
+              </div>
+              <div className="p-3 bg-white border border-gray-400 rounded cursor-pointer hover:bg-gray-50">
+                <a href="https://medium.com/@peter_sweeney/why-the-f-ck-cant-i-get-sabrina-carpenter-out-of-my-head-658117112ae3" target="_blank" rel="noopener noreferrer" className="text-decoration-none">
+                  <strong>Why the F*ck Can't I Get Sabrina Carpenter Out of My Head?</strong>
+                </a>
+              </div>
+              <div className="p-3 bg-white border border-gray-400 rounded cursor-pointer hover:bg-gray-50">
+                <a href="https://medium.com/@peter_sweeney/the-erosion-and-rediscovery-of-personal-style-in-the-age-of-ai-229bbe242b35" target="_blank" rel="noopener noreferrer" className="text-decoration-none">
+                  <strong>The Erosion and Rediscovery of Personal Style in the Age of AI</strong>
+                </a>
+              </div>
+              <div className="p-3 bg-white border border-gray-400 rounded cursor-pointer hover:bg-gray-50">
+                <a href="https://medium.com/@peter_sweeney/i-am-looking-for-adventures-079b68e59b88" target="_blank" rel="noopener noreferrer" className="text-decoration-none">
+                  <strong>I Am Looking for Adventures</strong>
+                </a>
+              </div>
+            </div>
+            <button 
+              className="retro-button text-xs px-3 py-2 mt-3"
+              onClick={() => window.open('https://medium.com/@peter_sweeney', '_blank')}
+            >
+              View All Posts →
+            </button>
+          </div>
+        </DesktopWindow>
+      )}
+
+      {/* Reading Window */}
+      {openWindows.includes('reading') && (
+        <DesktopWindow
+          title="📚 My Reading List"
+          isOpen={true}
+          onClose={() => closeWindow('reading')}
+          initialPosition={{ x: 400, y: 100 }}
+          width={450}
+          height={500}
+        >
+          <div className="p-4">
+            <h3 className="font-bold mb-3 font-serif" style={{ color: '#8B4513' }}>Books & Notes</h3>
+            <div className="grid grid-cols-2 gap-3">
+              {books.map((book, index) => (
+                <div 
+                  key={index} 
+                  className="p-3 bg-white border border-gray-400 rounded cursor-pointer hover:bg-gray-50 transition-colors"
+                  title={book.notes}
+                >
+                  <img 
+                    src={book.cover}
+                    alt={book.title}
+                    className="w-full h-24 object-cover border border-gray-300 rounded mb-2"
+                  />
+                  <div className="text-xs">
+                    <div className="font-bold">{book.title}</div>
+                    <div className="text-gray-600">{book.author}</div>
+                    <div className="text-gray-500 mt-1 text-xs">{book.notes}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <p className="text-xs text-gray-600 mt-3 font-serif">Hover over books to see my notes</p>
+          </div>
+        </DesktopWindow>
+      )}
+
+      {/* Work Window */}
+      {openWindows.includes('work') && (
+        <DesktopWindow
+          title="💼 Professional Background"
+          isOpen={true}
+          onClose={() => closeWindow('work')}
+          initialPosition={{ x: 350, y: 250 }}
+          width={500}
+          height={400}
+        >
+          <div className="p-4">
+            <div className="flex items-start gap-4 mb-4">
+              <img 
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100" 
+                alt="Peter Sweeney" 
+                className="w-20 h-20 border-2 border-gray-400 rounded"
+              />
+              <div>
+                <h3 className="font-bold text-lg mb-2 font-serif" style={{ color: '#8B4513' }}>Peter Sweeney</h3>
+                <p className="text-sm text-gray-700 font-serif">
+                  Growth Lead at Footprint • Ex-Goldman Sachs • Ex-Founder of ALAO
+                </p>
+              </div>
+            </div>
+            <div className="space-y-3 text-sm font-serif">
+              <div>
+                <strong>Current:</strong> Leading growth at Footprint, helping fintechs and financial institutions verify identity and prevent fraud
+              </div>
+              <div>
+                <strong>Previous:</strong> Investment banking at Goldman Sachs (TMT team), Founded ALAO (sold to Commonwealth in 2022)
+              </div>
+              <div>
+                <strong>Side Projects:</strong> Night Routine app, Chrome article summarizer, 3D printer assembly, blog writing
+              </div>
+              <div>
+                <strong>Interests:</strong> Stablecoins, manufacturing, construction, ingredient supply chain, agriculture
+              </div>
+            </div>
+            <div className="mt-4 flex gap-2">
+              <button 
+                className="retro-button text-xs px-3 py-2"
+                onClick={() => window.open('https://www.linkedin.com/in/peter-sweeney-a78b85b9/', '_blank')}
+              >
+                LinkedIn
+              </button>
+              <button 
+                className="retro-button text-xs px-3 py-2"
+                onClick={() => window.open('https://x.com/peter_sweeney0', '_blank')}
+              >
+                Twitter
+              </button>
+            </div>
+          </div>
+        </DesktopWindow>
+      )}
+
+      {/* Guestbook Window */}
+      {openWindows.includes('guestbook') && (
+        <DesktopWindow
+          title="📝 Sign My Guestbook"
+          isOpen={true}
+          onClose={() => closeWindow('guestbook')}
+          initialPosition={{ x: 150, y: 50 }}
+          width={500}
+          height={600}
+        >
+          <div style={{ padding: '8px' }}>
+            <Guestbook />
+          </div>
+        </DesktopWindow>
+      )}
+
+      {/* Image Lightbox */}
+      <ImageLightbox
+        images={inspirationImages}
+        currentIndex={lightboxIndex}
+        isOpen={lightboxOpen}
+        onClose={() => setLightboxOpen(false)}
+        onNext={nextImage}
+        onPrev={prevImage}
+      />
 
       {/* Taskbar */}
       <Taskbar />
