@@ -6,6 +6,7 @@ import { SpotifyWindow } from "@/components/spotify-window";
 import { ClockWeatherWindow } from "@/components/clock-weather-window";
 import { ImageLightbox } from "@/components/image-lightbox";
 import { Guestbook } from "@/components/guestbook";
+import { LoadingScreen } from "@/components/loading-screen";
 import peterHeadshot from "@assets/Peter-Headshot.webp";
 
 const inspirationImages = [
@@ -147,6 +148,7 @@ const projects = [
 ];
 
 export default function Home() {
+  const [isLoading, setIsLoading] = useState(true);
   const [openWindows, setOpenWindows] = useState<string[]>(['clock', 'spotify']);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
@@ -198,6 +200,10 @@ export default function Home() {
     setLightboxIndex((prev) => (prev - 1 + inspirationImages.length) % inspirationImages.length);
   };
 
+  const handleLoadingComplete = () => {
+    setIsLoading(false);
+  };
+
   const desktopIcons = [
     { id: 'work', icon: '👋', label: 'About Me', position: { x: 30, y: 30 } },
     { id: 'spotify', icon: '🎵', label: 'Spotify', position: { x: 30, y: 130 } },
@@ -206,6 +212,10 @@ export default function Home() {
     { id: 'reading', icon: '📚', label: 'Reading', position: { x: 30, y: 430 } },
     { id: 'guestbook', icon: '📝', label: 'Guestbook', position: { x: 130, y: 30 } }
   ];
+
+  if (isLoading) {
+    return <LoadingScreen onComplete={handleLoadingComplete} />;
+  }
 
   return (
     <div className="desktop-bg relative">
