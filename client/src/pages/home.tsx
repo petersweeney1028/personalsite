@@ -338,59 +338,63 @@ export default function Home() {
         </DesktopWindow>
       )}
 
-      {/* Work Window */}
+      {/* About Me Window */}
       {openWindows.includes('work') && (
         <DesktopWindow
-          title="💼 Professional Background"
+          title="👋 About Me"
           isOpen={true}
           onClose={() => closeWindow('work')}
           initialPosition={{ x: 350, y: 250 }}
-          width={500}
-          height={400}
+          width={550}
+          height={450}
         >
-          <div className="p-4">
-            <div className="flex items-start gap-4 mb-4">
+          <div className="p-6 bg-gradient-to-b from-orange-50 to-orange-100 h-full">
+            <div className="flex items-start gap-6 mb-6">
               <img 
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&h=100" 
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=120&h=120" 
                 alt="Peter Sweeney" 
-                className="w-20 h-20 border-2 border-gray-400 rounded"
+                className="w-24 h-24 border-3 border-orange-300 rounded-lg shadow-lg"
               />
               <div>
-                <h3 className="font-bold text-lg mb-2 font-serif" style={{ color: '#8B4513' }}>Peter Sweeney</h3>
-                <p className="text-sm text-gray-700 font-serif">
+                <h3 className="font-bold text-2xl mb-3 font-serif" style={{ color: '#8B4513' }}>Peter Sweeney</h3>
+                <p className="text-base text-gray-700 font-serif leading-relaxed">
                   Growth Lead at Footprint • Ex-Goldman Sachs • Ex-Founder of ALAO
                 </p>
               </div>
             </div>
-            <div className="space-y-3 text-sm font-serif max-h-48 overflow-y-auto">
-              <div>
+            
+            <div className="bg-white rounded-lg border-2 border-orange-200 p-5 shadow-md">
+              <div className="space-y-4 text-base font-serif max-h-60 overflow-y-auto leading-relaxed" style={{ color: '#5D4037' }}>
                 <p>Hey everyone - I am Peter. I currently lead growth at Footprint, where we help fintechs, financial institutions, and marketplaces verify identity, prevent fraud, and vault sensitive information.</p>
-              </div>
-              <div>
+                
                 <p>I started my career in investment banking at GS, where I spent ~3 years on the TMT team. I left back in 2021 to start a company ALAO, which helped micro-celebrities invest in consumer brands. It was a blast; we made plenty of mistakes and learned a ton. In 2022, we sold the company to Commonwealth (for not a lot of money :)).</p>
-              </div>
-              <div>
+                
                 <p>I loved being a founder and fully intend to do it again. I joined Footprint as the first business hire in hopes to learn everything I can about building a generational company.</p>
-              </div>
-              <div>
+                
                 <p>These days I spend most of my time working on Footprint, but also explore curiosities (stablecoins, manufacturing, construction, ingredient supply chain, and agriculture), write a blog (as often as I can), and work on side projects.</p>
-              </div>
-              <div>
+                
                 <p>I am always looking to meet cool and interesting people. If you want to chat, feel free to DM me on Twitter.</p>
               </div>
             </div>
-            <div className="mt-4 flex gap-2">
+            
+            <div className="mt-6 flex gap-3 justify-center">
               <button 
-                className="retro-button text-xs px-3 py-2"
+                className="retro-button text-sm px-4 py-2"
                 onClick={() => window.open('https://www.linkedin.com/in/peter-sweeney-a78b85b9/', '_blank')}
               >
                 LinkedIn
               </button>
               <button 
-                className="retro-button text-xs px-3 py-2"
+                className="retro-button text-sm px-4 py-2"
                 onClick={() => window.open('https://x.com/peter_sweeney0', '_blank')}
               >
                 Twitter
+              </button>
+              <button 
+                className="retro-button text-sm px-4 py-2"
+                onClick={() => window.open('https://medium.com/@peter_sweeney', '_blank')}
+              >
+                Medium
               </button>
             </div>
           </div>
