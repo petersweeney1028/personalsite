@@ -16,7 +16,7 @@ export function DesktopIcon({ icon, label, onDoubleClick, position }: DesktopIco
       }}
       onDoubleClick={onDoubleClick}
     >
-      <div className="text-2xl mb-1">{icon}</div>
+      <div className="icon-emoji">{icon}</div>
       <span>{label}</span>
     </div>
   );
