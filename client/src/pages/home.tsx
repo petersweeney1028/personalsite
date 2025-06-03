@@ -174,7 +174,7 @@ export default function Home() {
   };
 
   const desktopIcons = [
-    { id: 'work', icon: '/src/assets/user-icon.png', label: 'About Me', position: { x: 30, y: 30 }, isImage: true },
+    { id: 'work', icon: '👋', label: 'About Me', position: { x: 30, y: 30 } },
     { id: 'spotify', icon: '🎵', label: 'Spotify', position: { x: 30, y: 130 } },
     { id: 'inspiration', icon: '🖼️', label: 'Inspiration', position: { x: 30, y: 230 } },
     { id: 'writing', icon: '✍️', label: 'Writing', position: { x: 30, y: 330 } },
@@ -192,7 +192,6 @@ export default function Home() {
           label={icon.label}
           position={icon.position}
           onDoubleClick={() => openWindow(icon.id)}
-          isImage={icon.isImage}
         />
       ))}
 
