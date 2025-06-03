@@ -80,14 +80,46 @@ const books = [
 ];
 
 const socialLinks = [
-  { name: "Twitter", icon: "🐦", url: "https://x.com/peter_sweeney0" },
+  { name: "X (Twitter)", icon: "🐦", url: "https://x.com/peter_sweeney0" },
   { name: "LinkedIn", icon: "💼", url: "https://www.linkedin.com/in/peter-sweeney-a78b85b9/" },
   { name: "GitHub", icon: "💻", url: "https://github.com/petersweeney1028" },
   { name: "Medium", icon: "📝", url: "https://medium.com/@peter_sweeney" },
-  { name: "Spotify", icon: "🎵", url: "https://open.spotify.com/user/312jm37lavwanfdvn5rbam2olzym" },
-  { name: "Footprint", icon: "🔒", url: "https://www.onefootprint.com" },
-  { name: "Night Routine", icon: "🌙", url: "https://apps.apple.com/sa/app/night-routine/id6740878360" },
-  { name: "Email", icon: "📧", url: "mailto:hello@petersweeney.com" }
+  { name: "Footprint", icon: "🔒", url: "https://www.onefootprint.com" }
+];
+
+const blogPosts = [
+  {
+    title: "Sports Talk Radio: The Best Community-Building Medium",
+    url: "https://medium.com/@peter_sweeney/sports-talk-radio-the-best-community-building-medium-84e21b9dfb82"
+  },
+  {
+    title: "Why the F*ck Can't I Get Sabrina Carpenter Out of My Head?",
+    url: "https://medium.com/@peter_sweeney/why-the-f-ck-cant-i-get-sabrina-carpenter-out-of-my-head-658117112ae3"
+  },
+  {
+    title: "The Erosion and Rediscovery of Personal Style in the Age of AI",
+    url: "https://medium.com/@peter_sweeney/the-erosion-and-rediscovery-of-personal-style-in-the-age-of-ai-229bbe242b35"
+  },
+  {
+    title: "I Am Looking for Adventures",
+    url: "https://medium.com/@peter_sweeney/i-am-looking-for-adventures-079b68e59b88"
+  },
+  {
+    title: "How to Be More Productive",
+    url: "https://medium.com/@peter_sweeney/how-to-be-more-productive-dc8ada8a3fb3"
+  },
+  {
+    title: "Interesting Things to Build in the Future: Part 3 – Future of Content",
+    url: "https://medium.com/@peter_sweeney/interesting-things-to-build-in-the-future-part-3-future-of-content-2e536eed6321"
+  },
+  {
+    title: "Interesting Things to Build in the Future: Part 2 – Longing for Belonging",
+    url: "https://medium.com/@peter_sweeney/interesting-things-to-build-in-the-future-part-2-longing-for-belonging-f816322ebd61"
+  },
+  {
+    title: "Interesting Things to Build in the Future",
+    url: "https://medium.com/@peter_sweeney/interesting-things-to-build-in-the-future-45a8ca6f1c0e"
+  }
 ];
 
 const projects = [
@@ -244,28 +276,15 @@ export default function Home() {
           height={350}
         >
           <div className="p-4">
-            <h3 className="font-bold mb-3 font-serif" style={{ color: '#8B4513' }}>Recent Blog Posts</h3>
-            <div className="space-y-2 text-sm">
-              <div className="p-3 bg-white border border-gray-400 rounded cursor-pointer hover:bg-gray-50">
-                <a href="https://medium.com/@peter_sweeney/sports-talk-radio-the-best-community-building-medium-84e21b9dfb82" target="_blank" rel="noopener noreferrer" className="text-decoration-none">
-                  <strong>Sports Talk Radio: The Best Community Building Medium</strong>
-                </a>
-              </div>
-              <div className="p-3 bg-white border border-gray-400 rounded cursor-pointer hover:bg-gray-50">
-                <a href="https://medium.com/@peter_sweeney/why-the-f-ck-cant-i-get-sabrina-carpenter-out-of-my-head-658117112ae3" target="_blank" rel="noopener noreferrer" className="text-decoration-none">
-                  <strong>Why the F*ck Can't I Get Sabrina Carpenter Out of My Head?</strong>
-                </a>
-              </div>
-              <div className="p-3 bg-white border border-gray-400 rounded cursor-pointer hover:bg-gray-50">
-                <a href="https://medium.com/@peter_sweeney/the-erosion-and-rediscovery-of-personal-style-in-the-age-of-ai-229bbe242b35" target="_blank" rel="noopener noreferrer" className="text-decoration-none">
-                  <strong>The Erosion and Rediscovery of Personal Style in the Age of AI</strong>
-                </a>
-              </div>
-              <div className="p-3 bg-white border border-gray-400 rounded cursor-pointer hover:bg-gray-50">
-                <a href="https://medium.com/@peter_sweeney/i-am-looking-for-adventures-079b68e59b88" target="_blank" rel="noopener noreferrer" className="text-decoration-none">
-                  <strong>I Am Looking for Adventures</strong>
-                </a>
-              </div>
+            <h3 className="font-bold mb-3 font-serif" style={{ color: '#8B4513' }}>My Blog Posts</h3>
+            <div className="space-y-2 text-sm max-h-60 overflow-y-auto">
+              {blogPosts.map((post, index) => (
+                <div key={index} className="p-3 bg-white border border-gray-400 rounded cursor-pointer hover:bg-gray-50">
+                  <a href={post.url} target="_blank" rel="noopener noreferrer" className="text-decoration-none">
+                    <strong>{post.title}</strong>
+                  </a>
+                </div>
+              ))}
             </div>
             <button 
               className="retro-button text-xs px-3 py-2 mt-3"
@@ -338,18 +357,21 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="space-y-3 text-sm font-serif">
+            <div className="space-y-3 text-sm font-serif max-h-48 overflow-y-auto">
               <div>
-                <strong>Current:</strong> Leading growth at Footprint, helping fintechs and financial institutions verify identity and prevent fraud
+                <p>Hey everyone - I am Peter. I currently lead growth at Footprint, where we help fintechs, financial institutions, and marketplaces verify identity, prevent fraud, and vault sensitive information.</p>
               </div>
               <div>
-                <strong>Previous:</strong> Investment banking at Goldman Sachs (TMT team), Founded ALAO (sold to Commonwealth in 2022)
+                <p>I started my career in investment banking at GS, where I spent ~3 years on the TMT team. I left back in 2021 to start a company ALAO, which helped micro-celebrities invest in consumer brands. It was a blast; we made plenty of mistakes and learned a ton. In 2022, we sold the company to Commonwealth (for not a lot of money :)).</p>
               </div>
               <div>
-                <strong>Side Projects:</strong> Night Routine app, Chrome article summarizer, 3D printer assembly, blog writing
+                <p>I loved being a founder and fully intend to do it again. I joined Footprint as the first business hire in hopes to learn everything I can about building a generational company.</p>
               </div>
               <div>
-                <strong>Interests:</strong> Stablecoins, manufacturing, construction, ingredient supply chain, agriculture
+                <p>These days I spend most of my time working on Footprint, but also explore curiosities (stablecoins, manufacturing, construction, ingredient supply chain, and agriculture), write a blog (as often as I can), and work on side projects.</p>
+              </div>
+              <div>
+                <p>I am always looking to meet cool and interesting people. If you want to chat, feel free to DM me on Twitter.</p>
               </div>
             </div>
             <div className="mt-4 flex gap-2">

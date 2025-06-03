@@ -1,0 +1,74 @@
+1. About Me
+markdown
+Copy
+Edit
+### About Me
+
+Hey everyone - I am Peter. I currently lead growth at Footprint, where we help fintechs, financial institutions, and marketplaces verify identity, prevent fraud, and vault sensitive information.
+
+I started my career in investment banking at GS, where I spent ~3 years on the TMT team. I left back in 2021 to start a company ALAO, which helped micro-celebrities invest in consumer brands. It was a blast; we made plenty of mistakes and learned a ton. In 2022, we sold the company to Commonwealth (for not a lot of money :)).
+
+I loved being a founder and fully intend to do it again. I joined Footprint as the first business hire in hopes to learn everything I can about building a generational company.
+
+These days I spend most of my time working on Footprint, but also explore curiosities (stablecoins, manufacturing, construction, ingredient supply chain, and agriculture), write a blog (as often as I can), and work on side projects. I share and keep track of all the above on this page.
+
+I am always looking to meet cool and interesting people. If you want to chat, feel free to DM me on Twitter.
+2. Find Me Online
+json
+Copy
+Edit
+[
+  {
+    "platform": "X (Twitter)",
+    "username": "@peter_sweeney0",
+    "url": "https://x.com/peter_sweeney0"
+  },
+  {
+    "platform": "GitHub",
+    "username": "petersweeney1028",
+    "url": "https://github.com/petersweeney1028"
+  },
+  {
+    "platform": "LinkedIn",
+    "name": "Peter Sweeney",
+    "url": "https://www.linkedin.com/in/peter-sweeney-a78b85b9/"
+  }
+]
+3. Blog Posts
+json
+Copy
+Edit
+[
+  {
+    "title": "Sports Talk Radio: The Best Community-Building Medium",
+    "url": "https://medium.com/@peter_sweeney/sports-talk-radio-the-best-community-building-medium-84e21b9dfb82"
+  },
+  {
+    "title": "Why the F*ck Can't I Get Sabrina Carpenter Out of My Head?",
+    "url": "https://medium.com/@peter_sweeney/why-the-f-ck-cant-i-get-sabrina-carpenter-out-of-my-head-658117112ae3"
+  },
+  {
+    "title": "The Erosion and Rediscovery of Personal Style in the Age of AI",
+    "url": "https://medium.com/@peter_sweeney/the-erosion-and-rediscovery-of-personal-style-in-the-age-of-ai-229bbe242b35"
+  },
+  {
+    "title": "I Am Looking for Adventures",
+    "url": "https://medium.com/@peter_sweeney/i-am-looking-for-adventures-079b68e59b88"
+  },
+  {
+    "title": "How to Be More Productive",
+    "url": "https://medium.com/@peter_sweeney/how-to-be-more-productive-dc8ada8a3fb3"
+  },
+  {
+    "title": "Interesting Things to Build in the Future: Part 3 – Future of Content",
+    "url": "https://medium.com/@peter_sweeney/interesting-things-to-build-in-the-future-part-3-future-of-content-2e536eed6321"
+  },
+  {
+    "title": "Interesting Things to Build in the Future: Part 2 – Longing for Belonging",
+    "url": "https://medium.com/@peter_sweeney/interesting-things-to-build-in-the-future-part-2-longing-for-belonging-f816322ebd61"
+  },
+  {
+    "title": "Interesting Things to Build in the Future",
+    "url": "https://medium.com/@peter_sweeney/interesting-things-to-build-in-the-future-45a8ca6f1c0e"
+  }
+]
