@@ -357,9 +357,6 @@ export default function Home() {
               />
               <div>
                 <h3 className="font-bold text-2xl mb-3 font-serif" style={{ color: '#8B4513' }}>Peter Sweeney</h3>
-                <p className="text-base text-gray-700 font-serif leading-relaxed">
-                  Growth Lead at Footprint • Ex-Goldman Sachs • Ex-Founder of ALAO
-                </p>
               </div>
             </div>
             
