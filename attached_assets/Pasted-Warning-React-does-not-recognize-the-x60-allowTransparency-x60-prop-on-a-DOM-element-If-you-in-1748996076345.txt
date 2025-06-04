@@ -1,0 +1,35 @@
+Warning: React does not recognize the &#x60;allowTransparency&#x60; prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase &#x60;allowtransparency&#x60; instead. If you accidentally passed it from a parent component, remove it from the DOM element.
+    at iframe
+    at div
+    at div
+    at div
+    at div
+    at DesktopWindow (https://b948b6c6-f0d8-491b-851a-3eb81b1f6188-00-3gqvov67694kl.kirk.replit.dev/src/components/desktop-window.tsx:20:3)
+    at div
+    at Home (https://b948b6c6-f0d8-491b-851a-3eb81b1f6188-00-3gqvov67694kl.kirk.replit.dev/src/pages/home.tsx:161:37)
+    at Route (https://b948b6c6-f0d8-491b-851a-3eb81b1f6188-00-3gqvov67694kl.kirk.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=360c555e:323:16)
+    at Switch (https://b948b6c6-f0d8-491b-851a-3eb81b1f6188-00-3gqvov67694kl.kirk.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=360c555e:379:17)
+    at Router
+    at Provider (https://b948b6c6-f0d8-491b-851a-3eb81b1f6188-00-3gqvov67694kl.kirk.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-532U4VYK.js?v=360c555e:72:15)
+    at TooltipProvider (https://b948b6c6-f0d8-491b-851a-3eb81b1f6188-00-3gqvov67694kl.kirk.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tooltip.js?v=360c555e:2247:5)
+    at QueryClientProvider (https://b948b6c6-f0d8-491b-851a-3eb81b1f6188-00-3gqvov67694kl.kirk.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@tanstack_react-query.js?v=360c555e:2805:3)
+    at App
+at iframe
+at div
+at div
+at div
+at div
+at DesktopWindow (https://b948b6c6-f0d8-491b-851a-3eb81b1f6188-00-3gqvov67694kl.kirk.replit.dev/src/components/desktop-window.tsx:20:3)
+at div
+at Home (https://b948b6c6-f0d8-491b-851a-3eb81b1f6188-00-3gqvov67694kl.kirk.replit.dev/src/pages/home.tsx:161:37)
+at Route (https://b948b6c6-f0d8-491b-851a-3eb81b1f6188-00-3gqvov67694kl.kirk.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=360c555e:323:16)
+at Switch (https://b948b6c6-f0d8-491b-851a-3eb81b1f6188-00-3gqvov67694kl.kirk.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/wouter.js?v=360c555e:379:17)
+at Router
+at Provider (https://b948b6c6-f0d8-491b-851a-3eb81b1f6188-00-3gqvov67694kl.kirk.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/chunk-532U4VYK.js?v=360c555e:72:15)
+at TooltipProvider (https://b948b6c6-f0d8-491b-851a-3eb81b1f6188-00-3gqvov67694kl.kirk.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@radix-ui_react-tooltip.js?v=360c555e:2247:5)
+at QueryClientProvider (https://b948b6c6-f0d8-491b-851a-3eb81b1f6188-00-3gqvov67694kl.kirk.replit.dev/@fs/home/runner/workspace/node_modules/.vite/deps/@tanstack_react-query.js?v=360c555e:2805:3)
+at App
+at t.value (https://b948b6c6-f0d8-491b-851a-3eb81b1f6188-00-3gqvov67694kl.kirk.replit.dev/__replco/static/devtools/eruda/3.2.3/eruda.js:2:17465)
+at new t (https://b948b6c6-f0d8-491b-851a-3eb81b1f6188-00-3gqvov67694kl.kirk.replit.dev/__replco/static/devtools/eruda/3.2.3/eruda.js:2:12630)
+at t.value (https://b948b6c6-f0d8-491b-851a-3eb81b1f6188-00-3gqvov67694kl.kirk.replit.dev/__replco/static/devtools/eruda/3.2.3/eruda.js:2:32766)
+at https://b948b6c6-f0d8-491b-851a-3eb81b1f6188-00-3gqvov67694kl.kirk.replit.dev/__replco/static/devtools/eruda/3.2.3/eruda.js:2:34400

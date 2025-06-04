@@ -238,39 +238,11 @@ export default function Home() {
         onFocus={() => bringToFront('clock')}
       />
 
-      {/* Spotify Window */}
-      {openWindows.includes('spotify') && (
-        <DesktopWindow
-          title="🎵 Spotify Player"
-          isOpen={true}
-          onClose={() => closeWindow('spotify')}
-          initialPosition={{ x: 200, y: 100 }}
-          width={450}
-          height={400}
-          zIndex={windowZIndices.spotify || 100}
-          onFocus={() => bringToFront('spotify')}
-        >
-          <div className="p-4" style={{ backgroundColor: '#403D39', color: '#F2B5D4' }}>
-            <p className="text-sm mb-4 font-serif">Now playing from my Liked Songs collection</p>
-            <div className="bg-white border-2 inset border-gray-400 h-64 rounded">
-              <iframe 
-                src="https://open.spotify.com/embed/user/312jm37lavwanfdvn5rbam2olzym" 
-                width="100%" 
-                height="100%" 
-                frameBorder="0" 
-                allowTransparency={true}
-                allow="encrypted-media"
-                title="Spotify Player"
-                style={{ borderRadius: '4px' }}
-              />
-            </div>
-            <div className="mt-3 flex gap-2">
-              <button className="retro-button text-xs px-3 py-1">⏸️ Pause</button>
-              <button className="retro-button text-xs px-3 py-1">⏭️ Next</button>
-            </div>
-          </div>
-        </DesktopWindow>
-      )}
+      {/* Spotify Window - Using dedicated SpotifyWindow component */}
+      <SpotifyWindow
+        isOpen={openWindows.includes('spotify')}
+        onClose={() => closeWindow('spotify')}
+      />
 
       {/* Inspiration Window */}
       {openWindows.includes('inspiration') && (
