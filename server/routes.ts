@@ -57,6 +57,51 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Get playlist data from Spotify
+  app.get("/api/spotify/playlist/:playlistId", async (req, res) => {
+    try {
+      const clientId = process.env.SPOTIFY_CLIENT_ID;
+      const clientSecret = process.env.SPOTIFY_CLIENT_SECRET;
+      
+      if (!clientId || !clientSecret) {
+        return res.status(400).json({ error: "Spotify credentials not configured" });
+      }
+
+      // Get access token
+      const tokenResponse = await fetch('https://accounts.spotify.com/api/token', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+          'Authorization': `Basic ${Buffer.from(`${clientId}:${clientSecret}`).toString('base64')}`
+        },
+        body: 'grant_type=client_credentials'
+      });
+
+      const tokenData = await tokenResponse.json();
+      
+      if (!tokenData.access_token) {
+        return res.status(500).json({ error: "Failed to get Spotify access token" });
+      }
+
+      // Get playlist data
+      const playlistResponse = await fetch(`https://api.spotify.com/v1/playlists/${req.params.playlistId}`, {
+        headers: {
+          'Authorization': `Bearer ${tokenData.access_token}`
+        }
+      });
+
+      if (!playlistResponse.ok) {
+        return res.status(playlistResponse.status).json({ error: "Failed to fetch playlist" });
+      }
+
+      const playlistData = await playlistResponse.json();
+      res.json(playlistData);
+    } catch (error) {
+      console.error('Spotify playlist error:', error);
+      res.status(500).json({ error: "Failed to fetch playlist data" });
+    }
+  });
+
   const httpServer = createServer(app);
   return httpServer;
 }
