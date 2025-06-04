@@ -149,7 +149,7 @@ const projects = [
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
-  const [openWindows, setOpenWindows] = useState<string[]>(['clock', 'spotify']);
+  const [openWindows, setOpenWindows] = useState<string[]>(['clock']);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
   const [windowZIndices, setWindowZIndices] = useState<Record<string, number>>({
