@@ -6,16 +6,9 @@ interface LoadingScreenProps {
 
 export function LoadingScreen({ onComplete }: LoadingScreenProps) {
   const [progress, setProgress] = useState(0);
-  const [showWelcome, setShowWelcome] = useState(false);
   const [loadingText, setLoadingText] = useState('INITIALIZING...');
 
   useEffect(() => {
-    // Load Tenor script for GIF
-    const script = document.createElement('script');
-    script.src = 'https://tenor.com/embed.js';
-    script.async = true;
-    document.body.appendChild(script);
-
     const messages = [
       'INITIALIZING...',
       'LOADING ASSETS...',
@@ -38,11 +31,8 @@ export function LoadingScreen({ onComplete }: LoadingScreenProps) {
         if (newProgress >= 100) {
           clearInterval(progressInterval);
           setTimeout(() => {
-            setShowWelcome(true);
-            setTimeout(() => {
-              onComplete();
-            }, 3000); // Show welcome for 3 seconds
-          }, 500);
+            onComplete();
+          }, 800); // Brief pause before transitioning
           return 100;
         }
         return newProgress;
@@ -51,67 +41,6 @@ export function LoadingScreen({ onComplete }: LoadingScreenProps) {
 
     return () => clearInterval(progressInterval);
   }, [onComplete]);
-
-  if (showWelcome) {
-    return (
-      <div className="fixed inset-0 z-50 flex items-center justify-center" style={{ backgroundColor: '#403D39' }}>
-        <div className="text-center">
-          <div className="relative">
-            <div 
-              style={{ 
-                width: '400px', 
-                height: '302px',
-                margin: '0 auto',
-                border: '3px solid #C1DDB9',
-                borderRadius: '8px',
-                overflow: 'hidden',
-                position: 'relative',
-                backgroundColor: '#062726',
-                backgroundImage: 'url(https://media.tenor.com/1b2PGgSN-UQAAAAC/80s-commercials-80s-mtv.gif)',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                backgroundRepeat: 'no-repeat'
-              }}
-            >
-              {/* Fallback content if GIF doesn't load */}
-              <div 
-                className="w-full h-full flex items-center justify-center"
-                style={{ 
-                  background: 'linear-gradient(45deg, #FFC684, #F2B5D4)',
-                  color: '#403D39'
-                }}
-              >
-                <div className="text-center font-pixel">
-                  <div className="text-xl mb-2">🌙</div>
-                  <div className="text-sm">RETRO VIBES</div>
-                </div>
-              </div>
-            </div>
-            <div 
-              className="absolute inset-0 flex items-center justify-center pointer-events-none"
-              style={{ 
-                background: 'linear-gradient(45deg, rgba(255, 198, 132, 0.8), rgba(242, 181, 212, 0.8))',
-                borderRadius: '8px',
-                border: '3px solid #C1DDB9'
-              }}
-            >
-              <h1 
-                className="font-pixel text-2xl font-bold text-center px-4 py-2 rounded"
-                style={{ 
-                  color: '#403D39',
-                  textShadow: '2px 2px 4px rgba(255, 255, 255, 0.8)',
-                  backgroundColor: 'rgba(255, 255, 255, 0.9)',
-                  border: '2px solid #403D39'
-                }}
-              >
-                WELCOME TO MY CRIB
-              </h1>
-            </div>
-          </div>
-        </div>
-      </div>
-    );
-  }
 
   return (
     <div 
