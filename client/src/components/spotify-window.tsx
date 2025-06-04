@@ -42,7 +42,7 @@ export function SpotifyWindow({ isOpen, onClose }: SpotifyWindowProps) {
   const [audioElement, setAudioElement] = useState<HTMLAudioElement | null>(null);
 
   const { data: playlist, isLoading, error } = useQuery<PlaylistData>({
-    queryKey: ['/api/spotify/playlist', '505yqRro56pe4jNE9Scrgj'],
+    queryKey: ['/api/spotify/playlist/505yqRro56pe4jNE9Scrgj'],
     enabled: isOpen,
   });
 
