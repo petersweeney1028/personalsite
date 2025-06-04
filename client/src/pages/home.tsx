@@ -5,7 +5,7 @@ import { Taskbar } from "@/components/taskbar";
 import { SpotifyWindow } from "@/components/spotify-window";
 import { ClockWeatherWindow } from "@/components/clock-weather-window";
 import { ImageLightbox } from "@/components/image-lightbox";
-import { Guestbook } from "@/components/guestbook";
+
 import { LoadingScreen } from "@/components/loading-screen";
 import peterHeadshot from "@assets/Peter-Headshot.webp";
 
@@ -209,8 +209,7 @@ export default function Home() {
     { id: 'spotify', icon: '🎵', label: 'Spotify', position: { x: 30, y: 130 } },
     { id: 'inspiration', icon: '🖼️', label: 'Inspiration', position: { x: 30, y: 230 } },
     { id: 'writing', icon: '✍️', label: 'Writing', position: { x: 30, y: 330 } },
-    { id: 'reading', icon: '📚', label: 'Reading', position: { x: 30, y: 430 } },
-    { id: 'guestbook', icon: '📝', label: 'Guestbook', position: { x: 130, y: 30 } }
+    { id: 'reading', icon: '📚', label: 'Reading', position: { x: 30, y: 430 } }
   ];
 
   if (isLoading) {
@@ -415,23 +414,7 @@ export default function Home() {
         </DesktopWindow>
       )}
 
-      {/* Guestbook Window */}
-      {openWindows.includes('guestbook') && (
-        <DesktopWindow
-          title="📝 Sign My Guestbook"
-          isOpen={true}
-          onClose={() => closeWindow('guestbook')}
-          initialPosition={{ x: 150, y: 50 }}
-          width={500}
-          height={600}
-          zIndex={windowZIndices.guestbook || 100}
-          onFocus={() => bringToFront('guestbook')}
-        >
-          <div style={{ padding: '8px' }}>
-            <Guestbook />
-          </div>
-        </DesktopWindow>
-      )}
+
 
       {/* Image Lightbox */}
       <ImageLightbox
