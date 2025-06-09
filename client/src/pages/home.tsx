@@ -282,13 +282,12 @@ export default function Home() {
           onClose={() => closeWindow('inspiration')}
           initialPosition={{ x: 300, y: 150 }}
           width={500}
-          height={400}
+          height={600}
           zIndex={windowZIndices.inspiration || 100}
           onFocus={() => bringToFront('inspiration')}
         >
-          <div className="p-4" style={{ backgroundColor: '#403D39', color: '#F2B5D4' }}>
-            <p className="text-sm mb-4 font-serif">Vintage tennis, 70s interiors, and sun-faded aesthetics</p>
-            <div className="grid grid-cols-3 gap-2">
+          <div className="p-4 h-full overflow-y-auto" style={{ backgroundColor: '#403D39', color: '#F2B5D4' }}>
+            <div className="grid grid-cols-2 gap-3">
               {inspirationImages.map((image, index) => (
                 <div 
                   key={index} 
@@ -298,12 +297,16 @@ export default function Home() {
                   <img 
                     src={image.src}
                     alt={image.alt}
-                    className="w-full h-20 object-cover border-2 border-gray-400 rounded"
+                    className="w-full h-24 object-cover rounded"
+                    style={{ border: '2px solid #C1DDB9' }}
                   />
+                  <p className="text-xs mt-1 text-center" style={{ color: '#C1DDB9' }}>
+                    {image.caption}
+                  </p>
                 </div>
               ))}
             </div>
-            <p className="text-xs mt-3 font-serif" style={{ color: '#F2B5D4' }}>Click any image to view in full size</p>
+            <p className="text-xs mt-4 text-center font-serif" style={{ color: '#F2B5D4' }}>Click any image to view in full size</p>
           </div>
         </DesktopWindow>
       )}
