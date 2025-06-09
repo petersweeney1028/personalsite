@@ -33,28 +33,28 @@ import image11 from "@assets/image_1749505854284.png";
 import image12 from "@assets/image_1749505882301.png";
 
 const inspirationImages = [
-  { src: boatImage, alt: "Sailing adventure", caption: "" },
-  { src: bourdainImage, alt: "Bourdain dining", caption: "" },
-  { src: nightBoatImage, alt: "Night boat party", caption: "" },
-  { src: oldDudeImage, alt: "Stylish elder", caption: "" },
-  { src: oldWithFlowersImage, alt: "Flower vendors", caption: "" },
-  { src: surfImage, alt: "Surf art", caption: "" },
-  { src: toyotaImage, alt: "Yellow Toyota truck", caption: "" },
-  { src: vibinImage, alt: "Friends enjoying drinks", caption: "" },
-  { src: wallPaintImage, alt: "Creative wall art", caption: "" },
-  { src: windowImage, alt: "Rustic window garden", caption: "" },
-  { src: image1, alt: "Portrait with flower in cap", caption: "" },
-  { src: image2, alt: "Friends with drinks outdoors", caption: "" },
-  { src: image3, alt: "Smiling in vintage car", caption: "" },
-  { src: image4, alt: "Wine at stylish restaurant", caption: "" },
-  { src: image5, alt: "Lakeside with dog", caption: "" },
-  { src: image6, alt: "Road trip adventure", caption: "" },
-  { src: image7, alt: "Tennis in white", caption: "" },
-  { src: image8, alt: "Horseback riding at sunset", caption: "" },
   { src: image9, alt: "Colorful crochet cardigan", caption: "" },
-  { src: image10, alt: "Breakfast by the window", caption: "" },
+  { src: surfImage, alt: "Surf art", caption: "" },
+  { src: image5, alt: "Lakeside with dog", caption: "" },
+  { src: oldWithFlowersImage, alt: "Flower vendors", caption: "" },
+  { src: image12, alt: "Dinner party celebration", caption: "" },
+  { src: boatImage, alt: "Sailing adventure", caption: "" },
+  { src: image3, alt: "Smiling in vintage car", caption: "" },
+  { src: wallPaintImage, alt: "Creative wall art", caption: "" },
+  { src: image7, alt: "Tennis in white", caption: "" },
+  { src: vibinImage, alt: "Friends enjoying drinks", caption: "" },
+  { src: image1, alt: "Portrait with flower in cap", caption: "" },
+  { src: toyotaImage, alt: "Yellow Toyota truck", caption: "" },
+  { src: image8, alt: "Horseback riding at sunset", caption: "" },
+  { src: bourdainImage, alt: "Bourdain dining", caption: "" },
   { src: image11, alt: "Surfboard and purple shorts", caption: "" },
-  { src: image12, alt: "Dinner party celebration", caption: "" }
+  { src: windowImage, alt: "Rustic window garden", caption: "" },
+  { src: image2, alt: "Friends with drinks outdoors", caption: "" },
+  { src: oldDudeImage, alt: "Stylish elder", caption: "" },
+  { src: image10, alt: "Breakfast by the window", caption: "" },
+  { src: nightBoatImage, alt: "Night boat party", caption: "" },
+  { src: image4, alt: "Wine at stylish restaurant", caption: "" },
+  { src: image6, alt: "Road trip adventure", caption: "" }
 ];
 
 const books = [
