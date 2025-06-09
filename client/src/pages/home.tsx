@@ -19,58 +19,42 @@ import toyotaImage from "@assets/toyota.jpg";
 import vibinImage from "@assets/vibin.jpg";
 import wallPaintImage from "@assets/Wall paint.jpg";
 import windowImage from "@assets/window.jpg";
+import image1 from "@assets/image_1749505584075.png";
+import image2 from "@assets/image_1749505631464.png";
+import image3 from "@assets/image_1749505655170.png";
+import image4 from "@assets/image_1749505675928.png";
+import image5 from "@assets/image_1749505706312.png";
+import image6 from "@assets/image_1749505726650.png";
+import image7 from "@assets/image_1749505746814.png";
+import image8 from "@assets/image_1749505777880.png";
+import image9 from "@assets/image_1749505800000.png";
+import image10 from "@assets/image_1749505824351.png";
+import image11 from "@assets/image_1749505854284.png";
+import image12 from "@assets/image_1749505882301.png";
 
 const inspirationImages = [
-  {
-    src: boatImage,
-    alt: "Sailing adventure",
-    caption: "Life on the water - authentic moments at sea"
-  },
-  {
-    src: bourdainImage,
-    alt: "Bourdain dining",
-    caption: "The art of slow dining and savoring life"
-  },
-  {
-    src: nightBoatImage,
-    alt: "Night boat party",
-    caption: "Summer nights and good company on the water"
-  },
-  {
-    src: oldDudeImage,
-    alt: "Stylish elder",
-    caption: "Timeless style and quiet confidence"
-  },
-  {
-    src: oldWithFlowersImage,
-    alt: "Flower vendors",
-    caption: "Simple joys and honest work"
-  },
-  {
-    src: surfImage,
-    alt: "Surf art",
-    caption: "Ocean waves and endless summer dreams"
-  },
-  {
-    src: toyotaImage,
-    alt: "Yellow Toyota truck",
-    caption: "Adventure-ready and built to last"
-  },
-  {
-    src: vibinImage,
-    alt: "Friends enjoying drinks",
-    caption: "Good times and even better company"
-  },
-  {
-    src: wallPaintImage,
-    alt: "Creative wall art",
-    caption: "Making spaces beautiful with your own hands"
-  },
-  {
-    src: windowImage,
-    alt: "Rustic window garden",
-    caption: "Where nature meets architecture"
-  }
+  { src: boatImage, alt: "Sailing adventure", caption: "" },
+  { src: bourdainImage, alt: "Bourdain dining", caption: "" },
+  { src: nightBoatImage, alt: "Night boat party", caption: "" },
+  { src: oldDudeImage, alt: "Stylish elder", caption: "" },
+  { src: oldWithFlowersImage, alt: "Flower vendors", caption: "" },
+  { src: surfImage, alt: "Surf art", caption: "" },
+  { src: toyotaImage, alt: "Yellow Toyota truck", caption: "" },
+  { src: vibinImage, alt: "Friends enjoying drinks", caption: "" },
+  { src: wallPaintImage, alt: "Creative wall art", caption: "" },
+  { src: windowImage, alt: "Rustic window garden", caption: "" },
+  { src: image1, alt: "Portrait with flower in cap", caption: "" },
+  { src: image2, alt: "Friends with drinks outdoors", caption: "" },
+  { src: image3, alt: "Smiling in vintage car", caption: "" },
+  { src: image4, alt: "Wine at stylish restaurant", caption: "" },
+  { src: image5, alt: "Lakeside with dog", caption: "" },
+  { src: image6, alt: "Road trip adventure", caption: "" },
+  { src: image7, alt: "Tennis in white", caption: "" },
+  { src: image8, alt: "Horseback riding at sunset", caption: "" },
+  { src: image9, alt: "Colorful crochet cardigan", caption: "" },
+  { src: image10, alt: "Breakfast by the window", caption: "" },
+  { src: image11, alt: "Surfboard and purple shorts", caption: "" },
+  { src: image12, alt: "Dinner party celebration", caption: "" }
 ];
 
 const books = [
@@ -300,9 +284,6 @@ export default function Home() {
                     className="w-full h-24 object-cover rounded"
                     style={{ border: '2px solid #C1DDB9' }}
                   />
-                  <p className="text-xs mt-1 text-center" style={{ color: '#C1DDB9' }}>
-                    {image.caption}
-                  </p>
                 </div>
               ))}
             </div>
