@@ -9,36 +9,67 @@ import { ImageLightbox } from "@/components/image-lightbox";
 import { LoadingScreen } from "@/components/loading-screen";
 import peterHeadshot from "@assets/Peter-Headshot.webp";
 
+import boatImage from "@assets/boat.jpg";
+import bourdainImage from "@assets/Bourdain.jpg";
+import nightBoatImage from "@assets/night boat.jpg";
+import oldDudeImage from "@assets/Old dude.jpg";
+import oldWithFlowersImage from "@assets/Old with flowers.jpg";
+import surfImage from "@assets/surf.jpg";
+import toyotaImage from "@assets/toyota.jpg";
+import vibinImage from "@assets/vibin.jpg";
+import wallPaintImage from "@assets/Wall paint.jpg";
+import windowImage from "@assets/window.jpg";
+
 const inspirationImages = [
   {
-    src: "https://images.unsplash.com/photo-1554941426-e6312d7d6054?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
-    alt: "Tennis court with warm light",
-    caption: "Vintage tennis courts capture that perfect summer light"
+    src: boatImage,
+    alt: "Sailing adventure",
+    caption: "Life on the water - authentic moments at sea"
   },
   {
-    src: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
-    alt: "70s interior design",
-    caption: "Warm earth tones and organic shapes from the 70s"
+    src: bourdainImage,
+    alt: "Bourdain dining",
+    caption: "The art of slow dining and savoring life"
   },
   {
-    src: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
-    alt: "Sunset over tennis court",
-    caption: "Sun-faded textures and golden hour nostalgia"
+    src: nightBoatImage,
+    alt: "Night boat party",
+    caption: "Summer nights and good company on the water"
   },
   {
-    src: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
-    alt: "Retro poolside scene",
-    caption: "Poolsuite-inspired summer vibes"
+    src: oldDudeImage,
+    alt: "Stylish elder",
+    caption: "Timeless style and quiet confidence"
   },
   {
-    src: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
-    alt: "Vintage polaroid photos",
-    caption: "Analog memories and instant photography"
+    src: oldWithFlowersImage,
+    alt: "Flower vendors",
+    caption: "Simple joys and honest work"
   },
   {
-    src: "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=300",
-    alt: "Retro radio",
-    caption: "Vintage audio equipment and warm tones"
+    src: surfImage,
+    alt: "Surf art",
+    caption: "Ocean waves and endless summer dreams"
+  },
+  {
+    src: toyotaImage,
+    alt: "Yellow Toyota truck",
+    caption: "Adventure-ready and built to last"
+  },
+  {
+    src: vibinImage,
+    alt: "Friends enjoying drinks",
+    caption: "Good times and even better company"
+  },
+  {
+    src: wallPaintImage,
+    alt: "Creative wall art",
+    caption: "Making spaces beautiful with your own hands"
+  },
+  {
+    src: windowImage,
+    alt: "Rustic window garden",
+    caption: "Where nature meets architecture"
   }
 ];
 
