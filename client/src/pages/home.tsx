@@ -223,26 +223,38 @@ const blogPosts = [
   }
 ];
 
-const projects = [
+const sideProjects = [
   {
-    title: "Night Routine App",
-    description: "Working with a friend on an app to help people set and stick to a nightly routine to optimize their sleep. Available on the App Store.",
-    tags: ["iOS", "Sleep Tech"]
+    title: "Night Routine",
+    description: "Working with a friend on an app to help people set and stick to a nightly routine to optimize their sleep.",
+    status: "Live on App Store",
+    link: "https://apps.apple.com/sa/app/night-routine/id6740878360",
+    icon: "🌙",
+    note: "Check it out on the App Store!"
   },
   {
-    title: "Chrome Article Summarizer",
-    description: "Building a chrome extension that summarizes saved articles using GPT. Because who actually reads all those Instapaper articles?",
-    tags: ["Chrome Extension", "AI"]
+    title: "Chrome Plugin to Summarize Articles",
+    description: "I am a big Instapaper user, which really means I store articles in there and never read them. Building a chrome plugin that sends you a summary of all saved articles once a week.",
+    status: "In Development",
+    link: "https://www.loom.com/share/c4d912fa335a43c58d632e36bb3d8033?sid=5ad9ffa7-af94-437e-bad5-c21cee94dfd3",
+    icon: "🔗",
+    note: "Building with GPT and YouTube videos. Latest progress shown in Loom video!"
   },
   {
-    title: "3D Printer Build",
-    description: "Currently assembling a Prusa i3 MK3S+ kit. Part of my journey into the reindustrialization movement and getting my hands dirty with hardware.",
-    tags: ["Hardware", "3D Printing"]
+    title: "Taylor Swift Newsletter",
+    description: "Built an AI automated Taylor Swift newsletter in early 2023. Daily webscraper pulled top 10 Google News stories, GPT summarized in millennial voice, used TF-IDF matrix for similarity detection.",
+    status: "Discontinued",
+    link: null,
+    icon: "📰",
+    note: "Peaked at 11 subscribers. Google News changed their HTML and broke the scraper 2 weeks after launch."
   },
   {
-    title: "Blog Writing",
-    description: "Writing about tech, culture, and startups on Medium. Covering everything from AI and NFTs to the future of content and community building.",
-    tags: ["Writing", "Medium"]
+    title: "Screw Cupid, Just Text",
+    description: "Valentine's Day project for college students to anonymously message their crush. Built with SquareSpace, Zapier, Google Sheets, and Twilio. $1 to reveal sender identity.",
+    status: "Completed",
+    link: null,
+    icon: "💕",
+    note: "Made $4 total revenue lol"
   }
 ];
 
@@ -311,9 +323,10 @@ export default function Home() {
         { id: 'clock', icon: '🕐', label: 'Clock & Weather', position: { x: 20, y: 20 } },
         { id: 'work', icon: '👋', label: 'About Me', position: { x: 110, y: 20 } },
         { id: 'spotify', icon: '🎵', label: 'Spotify', position: { x: 200, y: 20 } },
-        { id: 'inspiration', icon: '🖼️', label: 'Inspiration', position: { x: 20, y: 110 } },
-        { id: 'writing', icon: '✍️', label: 'Writing', position: { x: 110, y: 110 } },
-        { id: 'reading', icon: '📚', label: 'Reading', position: { x: 200, y: 110 } }
+        { id: 'projects', icon: '🛠️', label: 'Side Projects', position: { x: 20, y: 110 } },
+        { id: 'inspiration', icon: '🖼️', label: 'Inspiration', position: { x: 110, y: 110 } },
+        { id: 'writing', icon: '✍️', label: 'Writing', position: { x: 200, y: 110 } },
+        { id: 'reading', icon: '📚', label: 'Reading', position: { x: 20, y: 200 } }
       ];
     } else {
       // Desktop layout - scattered naturally
@@ -321,9 +334,10 @@ export default function Home() {
         { id: 'clock', icon: '🕐', label: 'Clock & Weather', position: { x: 85, y: 45 } },
         { id: 'work', icon: '👋', label: 'About Me', position: { x: 180, y: 120 } },
         { id: 'spotify', icon: '🎵', label: 'Spotify', position: { x: 320, y: 85 } },
+        { id: 'projects', icon: '🛠️', label: 'Side Projects', position: { x: 450, y: 120 } },
         { id: 'inspiration', icon: '🖼️', label: 'Inspiration', position: { x: 120, y: 280 } },
-        { id: 'writing', icon: '✍️', label: 'Writing', position: { x: 420, y: 180 } },
-        { id: 'reading', icon: '📚', label: 'Reading', position: { x: 280, y: 320 } }
+        { id: 'writing', icon: '✍️', label: 'Writing', position: { x: 420, y: 280 } },
+        { id: 'reading', icon: '📚', label: 'Reading', position: { x: 280, y: 420 } }
       ];
     }
   };
@@ -424,6 +438,74 @@ export default function Home() {
             >
               View All Posts →
             </button>
+          </div>
+        </DesktopWindow>
+      )}
+
+      {/* Side Projects Window */}
+      {openWindows.includes('projects') && (
+        <DesktopWindow
+          title="🛠️ Side Projects"
+          isOpen={true}
+          onClose={() => closeWindow('projects')}
+          initialPosition={{ x: 250, y: 120 }}
+          width={550}
+          height={600}
+          zIndex={windowZIndices.projects || 100}
+          onFocus={() => bringToFront('projects')}
+        >
+          <div className="p-4 mobile-scroll h-full overflow-y-auto" style={{ backgroundColor: '#403D39', color: '#F2B5D4' }}>
+            <h3 className="font-bold mb-4 font-serif mobile-text" style={{ color: '#F2B5D4' }}>My Side Projects</h3>
+            <div className="space-y-4">
+              {sideProjects.map((project, index) => (
+                <div 
+                  key={index} 
+                  className="p-4 border rounded-lg hover:opacity-90 transition-opacity"
+                  style={{ backgroundColor: '#403D39', borderColor: '#C1DDB9' }}
+                >
+                  <div className="flex items-start gap-3">
+                    <span className="text-2xl">{project.icon}</span>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-2">
+                        <h4 className="font-bold text-sm" style={{ color: '#F2B5D4' }}>{project.title}</h4>
+                        <span 
+                          className="px-2 py-1 text-xs rounded"
+                          style={{ 
+                            backgroundColor: project.status === 'Live on App Store' ? '#C1DDB9' : 
+                                           project.status === 'In Development' ? '#FFC684' : 
+                                           project.status === 'Discontinued' ? '#666' : '#F2B5D4',
+                            color: project.status === 'Discontinued' ? '#ccc' : '#403D39'
+                          }}
+                        >
+                          {project.status}
+                        </span>
+                      </div>
+                      <p className="text-xs mb-2 leading-relaxed" style={{ color: '#F2B5D4' }}>
+                        {project.description}
+                      </p>
+                      {project.note && (
+                        <p className="text-xs italic mb-2" style={{ color: '#FFC684' }}>
+                          {project.note}
+                        </p>
+                      )}
+                      {project.link && (
+                        <a 
+                          href={project.link} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-xs underline hover:opacity-80"
+                          style={{ color: '#C1DDB9' }}
+                        >
+                          {project.title === 'Night Routine' ? 'View on App Store' : 
+                           project.title === 'Chrome Plugin to Summarize Articles' ? 'Watch Latest Demo' : 
+                           'Learn More'}
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </DesktopWindow>
       )}
