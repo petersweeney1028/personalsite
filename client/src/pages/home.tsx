@@ -105,6 +105,78 @@ const books = [
     author: "Ben R. Rich and Leo Janos",
     cover: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=300",
     notes: "Inside stories from Lockheed's advanced development projects"
+  },
+  {
+    title: "Greenlights",
+    author: "Matthew McConaughey",
+    cover: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=300",
+    notes: "Life lessons and philosophy from the Oscar-winning actor"
+  },
+  {
+    title: "The Fifth Risk",
+    author: "Michael Lewis",
+    cover: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=300",
+    notes: "How government transitions affect democracy and public safety"
+  },
+  {
+    title: "The Creative Act: A Way of Being",
+    author: "Rick Rubin",
+    cover: "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=300",
+    notes: "Philosophical approach to creativity and artistic expression"
+  },
+  {
+    title: "Shoe Dog",
+    author: "Phil Knight",
+    cover: "https://images.unsplash.com/photo-1592496431122-2349e0fbc666?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=300",
+    notes: "The founding story of Nike and entrepreneurial journey"
+  },
+  {
+    title: "Red Notice",
+    author: "Bill Browder",
+    cover: "https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=300",
+    notes: "True story of high finance, murder, and fight for justice in Russia"
+  },
+  {
+    title: "The Hitchhiker's Guide to the Galaxy",
+    author: "Douglas Adams",
+    cover: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=300",
+    notes: "Satirical science fiction comedy classic"
+  },
+  {
+    title: "Elon Musk",
+    author: "Walter Isaacson",
+    cover: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=300",
+    notes: "Comprehensive biography of the Tesla and SpaceX founder"
+  },
+  {
+    title: "The Restaurant at the End of the Universe",
+    author: "Douglas Adams",
+    cover: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=300",
+    notes: "Second book in the Hitchhiker's Guide series"
+  },
+  {
+    title: "What's Our Problem?",
+    author: "Tim Urban",
+    cover: "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=300",
+    notes: "A self-help book for societies and collective thinking"
+  },
+  {
+    title: "Chip War",
+    author: "Chris Miller",
+    cover: "https://images.unsplash.com/photo-1592496431122-2349e0fbc666?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=300",
+    notes: "The fight for the world's most critical technology"
+  },
+  {
+    title: "The Hunt for Red October",
+    author: "Tom Clancy",
+    cover: "https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=300",
+    notes: "Classic Cold War submarine thriller"
+  },
+  {
+    title: "Energy: A Human History",
+    author: "Richard Rhodes",
+    cover: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=300",
+    notes: "Comprehensive look at humanity's relationship with energy"
   }
 ];
 
