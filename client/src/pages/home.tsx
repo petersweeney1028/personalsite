@@ -304,11 +304,12 @@ export default function Home() {
   };
 
   const desktopIcons = [
-    { id: 'work', icon: '👋', label: 'About Me', position: { x: 30, y: 30 } },
-    { id: 'spotify', icon: '🎵', label: 'Spotify', position: { x: 30, y: 130 } },
-    { id: 'inspiration', icon: '🖼️', label: 'Inspiration', position: { x: 30, y: 230 } },
-    { id: 'writing', icon: '✍️', label: 'Writing', position: { x: 30, y: 330 } },
-    { id: 'reading', icon: '📚', label: 'Reading', position: { x: 30, y: 430 } }
+    { id: 'clock', icon: '🕐', label: 'Clock & Weather', position: { x: 30, y: 30 } },
+    { id: 'work', icon: '👋', label: 'About Me', position: { x: 30, y: 130 } },
+    { id: 'spotify', icon: '🎵', label: 'Spotify', position: { x: 30, y: 230 } },
+    { id: 'inspiration', icon: '🖼️', label: 'Inspiration', position: { x: 30, y: 330 } },
+    { id: 'writing', icon: '✍️', label: 'Writing', position: { x: 30, y: 430 } },
+    { id: 'reading', icon: '📚', label: 'Reading', position: { x: 30, y: 530 } }
   ];
 
   if (isLoading) {
