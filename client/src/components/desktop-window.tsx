@@ -23,8 +23,26 @@ export function DesktopWindow({
   zIndex = 100,
   onFocus
 }: DesktopWindowProps) {
-  const [position, setPosition] = useState(initialPosition);
-  const [size, setSize] = useState({ width, height });
+  // Responsive sizing based on screen width
+  const getResponsiveSize = () => {
+    if (typeof window !== 'undefined' && window.innerWidth <= 768) {
+      return {
+        width: Math.min(width, window.innerWidth - 20),
+        height: Math.min(height, window.innerHeight - 100)
+      };
+    }
+    return { width, height };
+  };
+
+  const getResponsivePosition = () => {
+    if (typeof window !== 'undefined' && window.innerWidth <= 768) {
+      return { x: 10, y: 50 };
+    }
+    return initialPosition;
+  };
+
+  const [position, setPosition] = useState(getResponsivePosition());
+  const [size, setSize] = useState(getResponsiveSize());
   const [isDragging, setIsDragging] = useState(false);
   const [isResizing, setIsResizing] = useState(false);
   const [resizeDirection, setResizeDirection] = useState('');

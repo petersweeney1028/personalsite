@@ -141,6 +141,55 @@
   overflow: hidden;
 }
 
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .desktop-bg {
+    background-attachment: scroll;
+    overflow-x: auto;
+    overflow-y: auto;
+    padding: 10px;
+  }
+  
+  /* Make desktop icons touch-friendly */
+  .desktop-icon {
+    font-size: 48px !important;
+    padding: 12px !important;
+    min-width: 80px !important;
+    min-height: 80px !important;
+  }
+  
+  /* Make windows more mobile-friendly */
+  .desktop-window {
+    max-width: calc(100vw - 20px) !important;
+    max-height: calc(100vh - 100px) !important;
+  }
+  
+  /* Improve text readability on mobile */
+  .mobile-text {
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+  }
+  
+  /* Make scroll areas touch-friendly */
+  .mobile-scroll {
+    -webkit-overflow-scrolling: touch;
+    overflow-y: auto;
+    max-height: 60vh;
+  }
+  
+  /* Grid adjustments for mobile */
+  .mobile-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+  
+  /* Image gallery mobile adjustments */
+  .mobile-gallery {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+  }
+}
+
 /* Sparkle effects */
 .sparkle {
   position: absolute;

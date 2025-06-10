@@ -303,14 +303,32 @@ export default function Home() {
     setIsLoading(false);
   };
 
-  const desktopIcons = [
-    { id: 'clock', icon: '🕐', label: 'Clock & Weather', position: { x: 85, y: 45 } },
-    { id: 'work', icon: '👋', label: 'About Me', position: { x: 180, y: 120 } },
-    { id: 'spotify', icon: '🎵', label: 'Spotify', position: { x: 320, y: 85 } },
-    { id: 'inspiration', icon: '🖼️', label: 'Inspiration', position: { x: 120, y: 280 } },
-    { id: 'writing', icon: '✍️', label: 'Writing', position: { x: 420, y: 180 } },
-    { id: 'reading', icon: '📚', label: 'Reading', position: { x: 280, y: 320 } }
-  ];
+  // Responsive desktop icon positions
+  const getResponsiveIconPositions = () => {
+    if (typeof window !== 'undefined' && window.innerWidth <= 768) {
+      // Mobile layout - arrange in a more compact grid
+      return [
+        { id: 'clock', icon: '🕐', label: 'Clock & Weather', position: { x: 20, y: 20 } },
+        { id: 'work', icon: '👋', label: 'About Me', position: { x: 110, y: 20 } },
+        { id: 'spotify', icon: '🎵', label: 'Spotify', position: { x: 200, y: 20 } },
+        { id: 'inspiration', icon: '🖼️', label: 'Inspiration', position: { x: 20, y: 110 } },
+        { id: 'writing', icon: '✍️', label: 'Writing', position: { x: 110, y: 110 } },
+        { id: 'reading', icon: '📚', label: 'Reading', position: { x: 200, y: 110 } }
+      ];
+    } else {
+      // Desktop layout - scattered naturally
+      return [
+        { id: 'clock', icon: '🕐', label: 'Clock & Weather', position: { x: 85, y: 45 } },
+        { id: 'work', icon: '👋', label: 'About Me', position: { x: 180, y: 120 } },
+        { id: 'spotify', icon: '🎵', label: 'Spotify', position: { x: 320, y: 85 } },
+        { id: 'inspiration', icon: '🖼️', label: 'Inspiration', position: { x: 120, y: 280 } },
+        { id: 'writing', icon: '✍️', label: 'Writing', position: { x: 420, y: 180 } },
+        { id: 'reading', icon: '📚', label: 'Reading', position: { x: 280, y: 320 } }
+      ];
+    }
+  };
+
+  const desktopIcons = getResponsiveIconPositions();
 
   if (isLoading) {
     return <LoadingScreen onComplete={handleLoadingComplete} />;
@@ -355,8 +373,8 @@ export default function Home() {
           zIndex={windowZIndices.inspiration || 100}
           onFocus={() => bringToFront('inspiration')}
         >
-          <div className="p-4 h-full overflow-y-auto" style={{ backgroundColor: '#403D39', color: '#F2B5D4' }}>
-            <div className="grid grid-cols-2 gap-3">
+          <div className="p-4 h-full overflow-y-auto mobile-scroll" style={{ backgroundColor: '#403D39', color: '#F2B5D4' }}>
+            <div className="grid grid-cols-2 gap-3 md:grid-cols-2 mobile-gallery">
               {inspirationImages.map((image, index) => (
                 <div 
                   key={index} 
@@ -422,9 +440,9 @@ export default function Home() {
           zIndex={windowZIndices.reading || 100}
           onFocus={() => bringToFront('reading')}
         >
-          <div className="p-4" style={{ backgroundColor: '#403D39', color: '#F2B5D4' }}>
-            <h3 className="font-bold mb-3 font-serif" style={{ color: '#F2B5D4' }}>My Reading Collection</h3>
-            <div className="grid grid-cols-2 gap-3">
+          <div className="p-4 mobile-scroll" style={{ backgroundColor: '#403D39', color: '#F2B5D4' }}>
+            <h3 className="font-bold mb-3 font-serif mobile-text" style={{ color: '#F2B5D4' }}>My Reading Collection</h3>
+            <div className="grid grid-cols-2 gap-3 md:grid-cols-2 mobile-grid">
               {books.map((book, index) => (
                 <div 
                   key={index} 
