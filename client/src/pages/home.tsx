@@ -59,40 +59,52 @@ const inspirationImages = [
 
 const books = [
   {
-    title: "Sapiens",
-    author: "Yuval Noah Harari",
-    cover: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=300",
-    notes: "Fascinating perspective on human history and evolution"
-  },
-  {
-    title: "The Power Broker",
-    author: "Robert Caro",
+    title: "Journey to the Centre of the Earth",
+    author: "Jules Verne",
     cover: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=300",
-    notes: "Epic biography of Robert Moses and power in America"
+    notes: "Classic adventure into the unknown depths of our planet"
   },
   {
-    title: "Zero to One",
-    author: "Peter Thiel",
-    cover: "https://images.unsplash.com/photo-1592496431122-2349e0fbc666?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=300",
-    notes: "Essential reading for anyone building startups"
+    title: "Ghost Wars",
+    author: "Steve Coll",
+    cover: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=300",
+    notes: "Pulitzer Prize-winning account of CIA operations in Afghanistan"
   },
   {
-    title: "The Subtle Art of Not Giving a F*ck",
-    author: "Mark Manson",
+    title: "The Making of the Atomic Bomb",
+    author: "Richard Rhodes",
     cover: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=300",
-    notes: "Counterintuitive approach to living a good life"
+    notes: "Comprehensive history of nuclear weapons development"
   },
   {
-    title: "Atomic Habits",
-    author: "James Clear",
+    title: "Narcoland",
+    author: "Anabel Hernández",
     cover: "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=300",
-    notes: "Practical framework for building good habits"
+    notes: "Investigative exposé of Mexican drug cartels and corruption"
   },
   {
-    title: "The Mom Test",
-    author: "Rob Fitzpatrick",
+    title: "How the World Ran Out of Everything",
+    author: "Peter S. Goodman",
+    cover: "https://images.unsplash.com/photo-1592496431122-2349e0fbc666?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=300",
+    notes: "Analysis of global supply chain disruptions and economics"
+  },
+  {
+    title: "The WEIRDest People in the World",
+    author: "Joseph Henrich",
     cover: "https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=300",
-    notes: "How to talk to customers and learn if your idea is good"
+    notes: "How Western psychology became psychologically peculiar"
+  },
+  {
+    title: "The Perfectionists",
+    author: "Simon Winchester",
+    cover: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=300",
+    notes: "How precision engineers created the modern world"
+  },
+  {
+    title: "Skunk Works",
+    author: "Ben R. Rich and Leo Janos",
+    cover: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=300",
+    notes: "Inside stories from Lockheed's advanced development projects"
   }
 ];
 
