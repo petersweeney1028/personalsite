@@ -51,6 +51,7 @@ import whatsProblemBook from "@/assets/IMG_1035_1749514045460.png";
 import chipWarBook from "@/assets/IMG_1034_1749514045461.png";
 import redOctoberBook from "@/assets/IMG_1033_1749514045461.png";
 import energyBook from "@/assets/IMG_1032_1749514045461.png";
+import valentinesProject from "@/assets/valentines-project.png";
 
 const inspirationImages = [
   { src: image9, alt: "Colorful crochet cardigan", caption: "" },
@@ -254,7 +255,16 @@ const sideProjects = [
     status: "Completed",
     link: null,
     icon: "💕",
-    note: "Made $4 total revenue lol"
+    note: "Made $4 total revenue lol",
+    image: valentinesProject
+  },
+  {
+    title: "Building 3D Printer",
+    description: "Currently building a 3D printer as part of my journey into the reindustrialization movement. Bought a Prusa i3 MK3S+ kit assembly after realizing I needed one to build an underwater drone kit.",
+    status: "Completed",
+    link: "https://x.com/peter_sweeney0/status/1836571857480204436",
+    icon: "🖨️",
+    note: "The printer is working! Took longer than I'd like to admit but we are live. Hit me up for all your 3D printer needs"
   }
 ];
 
@@ -483,6 +493,16 @@ export default function Home() {
                       <p className="text-xs mb-2 leading-relaxed" style={{ color: '#F2B5D4' }}>
                         {project.description}
                       </p>
+                      {project.image && (
+                        <div className="mb-2">
+                          <img 
+                            src={project.image} 
+                            alt={project.title}
+                            className="w-full max-w-64 h-auto rounded border"
+                            style={{ borderColor: '#C1DDB9' }}
+                          />
+                        </div>
+                      )}
                       {project.note && (
                         <p className="text-xs italic mb-2" style={{ color: '#FFC684' }}>
                           {project.note}
@@ -498,6 +518,7 @@ export default function Home() {
                         >
                           {project.title === 'Night Routine' ? 'View on App Store' : 
                            project.title === 'Chrome Plugin to Summarize Articles' ? 'Watch Latest Demo' : 
+                           project.title === 'Building 3D Printer' ? 'See Twitter Post' :
                            'Learn More'}
                         </a>
                       )}
