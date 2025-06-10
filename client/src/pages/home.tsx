@@ -226,6 +226,14 @@ const blogPosts = [
 
 const sideProjects = [
   {
+    title: "ROT.CLUB",
+    description: "An AI-powered media platform where you create 21-second cartoons of Trump, Zelensky, and JD Vance arguing about anything. Started as a vision for Netflix meets Roblox - letting fans remix and recreate stories using AI.",
+    status: "Live",
+    link: "https://rot-club.replit.app/",
+    icon: "🎬",
+    note: "My exploration into AI media and remix culture. Make a Rot, share it with a friend, and let's make weirder stuff."
+  },
+  {
     title: "Night Routine",
     description: "Working with a friend on an app to help people set and stick to a nightly routine to optimize their sleep.",
     status: "Live on App Store",
