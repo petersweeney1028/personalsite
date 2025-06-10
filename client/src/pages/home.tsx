@@ -39,18 +39,18 @@ import worldRanOutBook from "@assets/image_1749513954205.png";
 import weirdestPeopleBook from "@assets/image_1749513970796.png";
 import perfectionistsBook from "@assets/image_1749513987058.png";
 import skunkWorksBook from "@assets/image_1749514005064.png";
-import greenlightsBook from "@assets/IMG_1043_1749514045458.PNG";
-import fifthRiskBook from "@assets/IMG_1042_1749514045459.PNG";
-import creativeActBook from "@assets/IMG_1041_1749514045459.PNG";
-import shoeDogBook from "@assets/IMG_1040_1749514045459.PNG";
-import redNoticeBook from "@assets/IMG_1039_1749514045460.PNG";
-import hitchhikerBook from "@assets/IMG_1038_1749514045460.PNG";
-import elonMuskBook from "@assets/IMG_1037_1749514045460.PNG";
-import restaurantBook from "@assets/IMG_1036_1749514045460.PNG";
-import whatsProblemBook from "@assets/IMG_1035_1749514045460.PNG";
-import chipWarBook from "@assets/IMG_1034_1749514045461.PNG";
-import redOctoberBook from "@assets/IMG_1033_1749514045461.PNG";
-import energyBook from "@assets/IMG_1032_1749514045461.PNG";
+import greenlightsBook from "@/assets/IMG_1043_1749514045458.png";
+import fifthRiskBook from "@/assets/IMG_1042_1749514045459.png";
+import creativeActBook from "@/assets/IMG_1041_1749514045459.png";
+import shoeDogBook from "@/assets/IMG_1040_1749514045459.png";
+import redNoticeBook from "@/assets/IMG_1039_1749514045460.png";
+import hitchhikerBook from "@/assets/IMG_1038_1749514045460.png";
+import elonMuskBook from "@/assets/IMG_1037_1749514045460.png";
+import restaurantBook from "@/assets/IMG_1036_1749514045460.png";
+import whatsProblemBook from "@/assets/IMG_1035_1749514045460.png";
+import chipWarBook from "@/assets/IMG_1034_1749514045461.png";
+import redOctoberBook from "@/assets/IMG_1033_1749514045461.png";
+import energyBook from "@/assets/IMG_1032_1749514045461.png";
 
 const inspirationImages = [
   { src: image9, alt: "Colorful crochet cardigan", caption: "" },
@@ -422,7 +422,7 @@ export default function Home() {
           onFocus={() => bringToFront('reading')}
         >
           <div className="p-4" style={{ backgroundColor: '#403D39', color: '#F2B5D4' }}>
-            <h3 className="font-bold mb-3 font-serif" style={{ color: '#F2B5D4' }}>Books & Notes</h3>
+            <h3 className="font-bold mb-3 font-serif" style={{ color: '#F2B5D4' }}>My Reading Collection</h3>
             <div className="grid grid-cols-2 gap-3">
               {books.map((book, index) => (
                 <div 
@@ -445,7 +445,7 @@ export default function Home() {
                 </div>
               ))}
             </div>
-            <p className="text-xs mt-3 font-serif" style={{ color: '#F2B5D4' }}>Hover over books to see my notes</p>
+
           </div>
         </DesktopWindow>
       )}
