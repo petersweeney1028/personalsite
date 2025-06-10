@@ -31,6 +31,26 @@ import image9 from "@assets/image_1749505800000.png";
 import image10 from "@assets/image_1749505824351.png";
 import image11 from "@assets/image_1749505854284.png";
 import image12 from "@assets/image_1749505882301.png";
+import journeyBook from "@assets/image_1749513879622.png";
+import ghostWarsBook from "@assets/image_1749513899150.png";
+import atomicBombBook from "@assets/image_1749513917203.png";
+import narcolandBook from "@assets/image_1749513936564.png";
+import worldRanOutBook from "@assets/image_1749513954205.png";
+import weirdestPeopleBook from "@assets/image_1749513970796.png";
+import perfectionistsBook from "@assets/image_1749513987058.png";
+import skunkWorksBook from "@assets/image_1749514005064.png";
+import greenlightsBook from "@assets/IMG_1043_1749514045458.PNG";
+import fifthRiskBook from "@assets/IMG_1042_1749514045459.PNG";
+import creativeActBook from "@assets/IMG_1041_1749514045459.PNG";
+import shoeDogBook from "@assets/IMG_1040_1749514045459.PNG";
+import redNoticeBook from "@assets/IMG_1039_1749514045460.PNG";
+import hitchhikerBook from "@assets/IMG_1038_1749514045460.PNG";
+import elonMuskBook from "@assets/IMG_1037_1749514045460.PNG";
+import restaurantBook from "@assets/IMG_1036_1749514045460.PNG";
+import whatsProblemBook from "@assets/IMG_1035_1749514045460.PNG";
+import chipWarBook from "@assets/IMG_1034_1749514045461.PNG";
+import redOctoberBook from "@assets/IMG_1033_1749514045461.PNG";
+import energyBook from "@assets/IMG_1032_1749514045461.PNG";
 
 const inspirationImages = [
   { src: image9, alt: "Colorful crochet cardigan", caption: "" },
@@ -61,122 +81,102 @@ const books = [
   {
     title: "Journey to the Centre of the Earth",
     author: "Jules Verne",
-    cover: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=300",
-    notes: "Classic adventure into the unknown depths of our planet"
+    cover: journeyBook
   },
   {
     title: "Ghost Wars",
     author: "Steve Coll",
-    cover: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=300",
-    notes: "Pulitzer Prize-winning account of CIA operations in Afghanistan"
+    cover: ghostWarsBook
   },
   {
     title: "The Making of the Atomic Bomb",
     author: "Richard Rhodes",
-    cover: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=300",
-    notes: "Comprehensive history of nuclear weapons development"
+    cover: atomicBombBook
   },
   {
     title: "Narcoland",
     author: "Anabel Hernández",
-    cover: "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=300",
-    notes: "Investigative exposé of Mexican drug cartels and corruption"
+    cover: narcolandBook
   },
   {
     title: "How the World Ran Out of Everything",
     author: "Peter S. Goodman",
-    cover: "https://images.unsplash.com/photo-1592496431122-2349e0fbc666?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=300",
-    notes: "Analysis of global supply chain disruptions and economics"
+    cover: worldRanOutBook
   },
   {
     title: "The WEIRDest People in the World",
     author: "Joseph Henrich",
-    cover: "https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=300",
-    notes: "How Western psychology became psychologically peculiar"
+    cover: weirdestPeopleBook
   },
   {
     title: "The Perfectionists",
     author: "Simon Winchester",
-    cover: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=300",
-    notes: "How precision engineers created the modern world"
+    cover: perfectionistsBook
   },
   {
     title: "Skunk Works",
     author: "Ben R. Rich and Leo Janos",
-    cover: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=300",
-    notes: "Inside stories from Lockheed's advanced development projects"
+    cover: skunkWorksBook
   },
   {
     title: "Greenlights",
     author: "Matthew McConaughey",
-    cover: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=300",
-    notes: "Life lessons and philosophy from the Oscar-winning actor"
+    cover: greenlightsBook
   },
   {
     title: "The Fifth Risk",
     author: "Michael Lewis",
-    cover: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=300",
-    notes: "How government transitions affect democracy and public safety"
+    cover: fifthRiskBook
   },
   {
     title: "The Creative Act: A Way of Being",
     author: "Rick Rubin",
-    cover: "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=300",
-    notes: "Philosophical approach to creativity and artistic expression"
+    cover: creativeActBook
   },
   {
     title: "Shoe Dog",
     author: "Phil Knight",
-    cover: "https://images.unsplash.com/photo-1592496431122-2349e0fbc666?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=300",
-    notes: "The founding story of Nike and entrepreneurial journey"
+    cover: shoeDogBook
   },
   {
     title: "Red Notice",
     author: "Bill Browder",
-    cover: "https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=300",
-    notes: "True story of high finance, murder, and fight for justice in Russia"
+    cover: redNoticeBook
   },
   {
     title: "The Hitchhiker's Guide to the Galaxy",
     author: "Douglas Adams",
-    cover: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=300",
-    notes: "Satirical science fiction comedy classic"
+    cover: hitchhikerBook
   },
   {
     title: "Elon Musk",
     author: "Walter Isaacson",
-    cover: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=300",
-    notes: "Comprehensive biography of the Tesla and SpaceX founder"
+    cover: elonMuskBook
   },
   {
     title: "The Restaurant at the End of the Universe",
     author: "Douglas Adams",
-    cover: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=300",
-    notes: "Second book in the Hitchhiker's Guide series"
+    cover: restaurantBook
   },
   {
     title: "What's Our Problem?",
     author: "Tim Urban",
-    cover: "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=300",
-    notes: "A self-help book for societies and collective thinking"
+    cover: whatsProblemBook
   },
   {
     title: "Chip War",
     author: "Chris Miller",
-    cover: "https://images.unsplash.com/photo-1592496431122-2349e0fbc666?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=300",
-    notes: "The fight for the world's most critical technology"
+    cover: chipWarBook
   },
   {
     title: "The Hunt for Red October",
     author: "Tom Clancy",
-    cover: "https://images.unsplash.com/photo-1512820790803-83ca734da794?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=300",
-    notes: "Classic Cold War submarine thriller"
+    cover: redOctoberBook
   },
   {
     title: "Energy: A Human History",
     author: "Richard Rhodes",
-    cover: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&h=300",
-    notes: "Comprehensive look at humanity's relationship with energy"
+    cover: energyBook
   }
 ];
 
@@ -429,7 +429,7 @@ export default function Home() {
                   key={index} 
                   className="p-3 border rounded cursor-pointer hover:opacity-80 transition-colors"
                   style={{ backgroundColor: '#403D39', borderColor: '#C1DDB9' }}
-                  title={book.notes}
+                  title={book.title}
                 >
                   <img 
                     src={book.cover}
@@ -440,7 +440,7 @@ export default function Home() {
                   <div className="text-xs">
                     <div className="font-bold" style={{ color: '#F2B5D4' }}>{book.title}</div>
                     <div style={{ color: '#F2B5D4' }}>{book.author}</div>
-                    <div className="mt-1 text-xs" style={{ color: '#F2B5D4' }}>{book.notes}</div>
+
                   </div>
                 </div>
               ))}
