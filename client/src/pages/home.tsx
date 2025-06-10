@@ -270,7 +270,16 @@ const sideProjects = [
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
-  const [openWindows, setOpenWindows] = useState<string[]>(['clock']);
+  
+  // Don't auto-open clock on mobile
+  const getInitialWindows = () => {
+    if (typeof window !== 'undefined' && window.innerWidth <= 768) {
+      return [];
+    }
+    return ['clock'];
+  };
+  
+  const [openWindows, setOpenWindows] = useState<string[]>(getInitialWindows());
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
   const [windowZIndices, setWindowZIndices] = useState<Record<string, number>>({
